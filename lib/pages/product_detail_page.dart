@@ -237,17 +237,12 @@ class _ProductDetailState extends State<ProductDetail> {
               Text(
                 'IDR 16.999.000',
                 style: TextStyle(
-                    // color: discount > 0 ? tertiaryColor : secondaryColor,
                     color: tertiaryColor,
                     fontSize: 18,
                     fontFamily: 'SF Pro Display',
                     fontWeight: FontWeight.w500,
                     decoration: TextDecoration.lineThrough,
-                    decorationColor: tertiaryColor
-                    // decoration: discount > 0
-                    //     ? TextDecoration.lineThrough
-                    //     : TextDecoration.none
-                    ),
+                    decorationColor: tertiaryColor),
               ),
               const SizedBox(
                 height: 12,
