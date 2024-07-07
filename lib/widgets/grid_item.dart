@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/pages/product_detail_page.dart';
 import 'package:flutter/material.dart';
 
 import '../config/constants.dart';
@@ -20,7 +21,10 @@ class GridItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const ProductDetail()));
+      },
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 15),
         decoration: BoxDecoration(
@@ -82,7 +86,8 @@ class GridItem extends StatelessWidget {
                   fontWeight: FontWeight.w500,
                   decoration: discount > 0
                       ? TextDecoration.lineThrough
-                      : TextDecoration.none),
+                      : TextDecoration.none,
+                  decorationColor: tertiaryColor),
             ),
           ],
         ),

@@ -331,7 +331,7 @@ class HomePage extends StatelessWidget {
                   GridItem(
                     imageUrl: 'assets/images/apple-ipad-pro-11-2022.jpg',
                     discount: 6,
-                    name: 'Ipad Pro 6th Generation 11 Inch',
+                    name: 'Ipad Pro 6th Generation 11 Inch 2022',
                     price: 'IDR 16.999.000',
                     discountPrice: 'IDR 15.299.000',
                   ),
