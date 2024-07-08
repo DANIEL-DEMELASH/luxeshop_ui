@@ -14,10 +14,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 10.0),
           child: Image.asset(
-            'assets/images/logo.webp',
-            width: 30,
+            'assets/images/logo.png',
+            width: 35,
           ),
         ),
         title: Text(
