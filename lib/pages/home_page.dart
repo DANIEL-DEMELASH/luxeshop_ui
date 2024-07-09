@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../widgets/category_widget.dart';
 import '../widgets/grid_item.dart';
+import '../widgets/square_painter.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -198,65 +199,65 @@ class HomePage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  Container(
+                  SizedBox(
                     height: 180,
                     width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: secondaryColor,
-                      image: const DecorationImage(
-                        image: AssetImage('assets/images/container-bg.jpg'),
-                        repeat: ImageRepeat.repeatX,
-                      ),
+                    child: ClipRRect(
                       borderRadius: BorderRadius.circular(25),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Padding(
+                      child: CustomPaint(
+                        painter: SquarePainter(),
+                        child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 20, top: 20, bottom: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            left: 20,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              const Text(
-                                '6.6 Flash Sale',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontFamily: 'SF Pro Display',
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              const Text(
-                                'Cashback Up to 100%',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 16,
-                                  fontFamily: 'SF Pro Display',
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: primaryColor,
-                                  borderRadius: BorderRadius.circular(4),
-                                ),
-                                child: const Text(
-                                  'Shop Now',
-                                  style: TextStyle(
-                                      fontFamily: 'SF Pro Display',
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  const Text(
+                                    '6.6 Flash Sale',
+                                    style: TextStyle(
                                       color: Colors.white,
-                                      fontWeight: FontWeight.w500),
-                                ),
+                                      fontSize: 20,
+                                      fontFamily: 'SF Pro Display',
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                  const Text(
+                                    'Cashback Up to 100%',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 16,
+                                      fontFamily: 'SF Pro Display',
+                                      fontWeight: FontWeight.w300,
+                                    ),
+                                  ),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 16, vertical: 4),
+                                    decoration: BoxDecoration(
+                                      color: primaryColor,
+                                      borderRadius: BorderRadius.circular(4),
+                                    ),
+                                    child: const Text(
+                                      'Shop Now',
+                                      style: TextStyle(
+                                          fontFamily: 'SF Pro Display',
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w500),
+                                    ),
+                                  ),
+                                ],
                               ),
+                              Image.asset('assets/images/pink-hoodie.png'),
                             ],
                           ),
                         ),
-                        Image.asset('assets/images/pink-hoodie.png'),
-                      ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 20),
