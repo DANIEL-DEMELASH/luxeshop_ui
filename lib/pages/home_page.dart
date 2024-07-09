@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../widgets/category_widget.dart';
 import '../widgets/grid_item.dart';
 import '../widgets/square_painter.dart';
+import 'my_cart_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -31,7 +32,10 @@ class HomePage extends StatelessWidget {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MyCart()));
+              },
               icon: Container(
                   decoration: BoxDecoration(
                       border: Border.all(color: tertiaryColor),

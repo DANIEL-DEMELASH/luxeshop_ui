@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ecommerce_ui/config/constants.dart';
+import 'package:ecommerce_ui/pages/my_cart_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -103,31 +104,38 @@ class _ProductDetailState extends State<ProductDetail> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Container(
-              height: 55,
-              width: MediaQuery.of(context).size.width / 2 - 26,
-              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-              decoration: BoxDecoration(
-                  border: Border.all(color: primaryColor),
-                  borderRadius: BorderRadius.circular(12)),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/images/shopping-bag-primary.png',
-                    width: 20,
-                  ),
-                  const SizedBox(
-                    width: 8,
-                  ),
-                  Text(
-                    'Add to Cart',
-                    style: TextStyle(
-                        fontFamily: 'SF Pro Display',
-                        color: primaryColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
-                  )
-                ],
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const MyCart()));
+              },
+              child: Container(
+                height: 55,
+                width: MediaQuery.of(context).size.width / 2 - 26,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+                decoration: BoxDecoration(
+                    border: Border.all(color: primaryColor),
+                    borderRadius: BorderRadius.circular(12)),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/shopping-bag-primary.png',
+                      width: 20,
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    Text(
+                      'Add to Cart',
+                      style: TextStyle(
+                          fontFamily: 'SF Pro Display',
+                          color: primaryColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500),
+                    )
+                  ],
+                ),
               ),
             ),
             Container(

@@ -7,6 +7,8 @@ Color pinkColor = const Color(0xFFF53349);
 Color blurredPinkColor = const Color(0xFFFCEAED);
 Color spaceGrayColor = const Color(0xFF828487);
 Color grayColor = const Color(0xFFEEF1F1);
+Color checkboxBorderColor = const Color(0xFFECEEF5);
+Color containerBorderColor = const Color(0xFFE7E9F0);
 
 List ipadImages = [
   'apple-ipad-pro-11-2022.jpg',
