@@ -326,7 +326,7 @@ class HomePage extends StatelessWidget {
                 crossAxisSpacing: 10,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                childAspectRatio: .7,
+                childAspectRatio: .60,
                 children: const [
                   GridItem(
                     imageUrl: 'assets/images/apple-ipad-pro-11-2022.jpg',

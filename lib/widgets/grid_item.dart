@@ -62,21 +62,15 @@ class GridItem extends StatelessWidget {
             Text(
               name,
               style: TextStyle(
-                  color: tertiaryColor,
+                  color: secondaryColor,
                   fontSize: 12,
                   fontFamily: 'SF Pro Display',
                   fontWeight: FontWeight.w500,
                   overflow: TextOverflow.ellipsis),
             ),
-            if (discount > 0)
-              Text(
-                discountPrice ?? '',
-                style: TextStyle(
-                    color: secondaryColor,
-                    fontSize: 16,
-                    fontFamily: 'SF Pro Display',
-                    fontWeight: FontWeight.w500),
-              ),
+            const SizedBox(
+              height: 4,
+            ),
             Text(
               price,
               style: TextStyle(
@@ -89,6 +83,80 @@ class GridItem extends StatelessWidget {
                       : TextDecoration.none,
                   decorationColor: tertiaryColor),
             ),
+            const SizedBox(
+              height: 4,
+            ),
+            if (discount > 0)
+              Text(
+                discountPrice ?? '',
+                style: TextStyle(
+                    color: secondaryColor,
+                    fontSize: 16,
+                    fontFamily: 'SF Pro Display',
+                    fontWeight: FontWeight.w500),
+              ),
+            const SizedBox(
+              height: 4,
+            ),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/images/star.png',
+                  width: 12,
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  '4.9',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      color: secondaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12),
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                CircleAvatar(
+                  radius: 3,
+                  backgroundColor: grayColor,
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  '518 sold',
+                  style: TextStyle(
+                      fontFamily: 'SF Pro Display',
+                      color: secondaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            Row(
+              children: [
+                Image.asset(
+                  'assets/images/location-small.png',
+                  width: 14,
+                ),
+                const SizedBox(
+                  width: 4,
+                ),
+                Text(
+                  'Surabaya',
+                  style: TextStyle(
+                    fontFamily: 'SF Pro Display',
+                    color: secondaryColor,
+                    fontWeight: FontWeight.w500,
+                  ),
+                )
+              ],
+            )
           ],
         ),
       ),
