@@ -1,4 +1,5 @@
 import 'package:ecommerce_ui/config/constants.dart';
+import 'package:ecommerce_ui/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/category_widget.dart';
@@ -51,6 +52,7 @@ class HomePage extends StatelessWidget {
           IconButton(
               onPressed: () {},
               icon: Container(
+                  margin: const EdgeInsets.only(right: 10),
                   decoration: BoxDecoration(
                       border: Border.all(color: tertiaryColor),
                       borderRadius: BorderRadius.circular(4)),
@@ -95,9 +97,17 @@ class HomePage extends StatelessWidget {
                               BorderSide(color: secondaryColor, width: 0.5),
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        prefixIcon: Icon(
-                          Icons.search,
-                          color: tertiaryColor,
+                        prefixIcon: IconButton(
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const SearchPage()));
+                          },
+                          icon: Icon(
+                            Icons.search,
+                            color: tertiaryColor,
+                          ),
                         ),
                         labelStyle: TextStyle(
                           fontFamily: 'SF Pro Display',

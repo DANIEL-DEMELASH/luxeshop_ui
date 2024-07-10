@@ -13,16 +13,20 @@ class CheckOutPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 20.0),
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
-            child: Container(
-                width: 35,
-                height: 35,
-                decoration: BoxDecoration(
-                    border: Border.all(color: tertiaryColor, width: .5),
-                    borderRadius: BorderRadius.circular(25)),
-                child: const Icon(Icons.arrow_back)),
+            child: CircleAvatar(
+              radius: 18,
+              backgroundColor: tertiaryColor,
+              child: CircleAvatar(
+                  radius: 17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: secondaryColor,
+                  )),
+            ),
           ),
         ),
         title: const Text(
