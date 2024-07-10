@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../widgets/expandable_text.dart';
+import 'checkout_page.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({super.key});
@@ -138,20 +139,30 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width / 2 - 26,
-              height: 55,
-              padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-              decoration: BoxDecoration(
-                  color: primaryColor, borderRadius: BorderRadius.circular(12)),
-              child: const Center(
-                child: Text(
-                  'Checkout',
-                  style: TextStyle(
-                      fontFamily: 'SF Pro Display',
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CheckOutPage()));
+              },
+              child: Container(
+                width: MediaQuery.of(context).size.width / 2 - 26,
+                height: 55,
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+                decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(12)),
+                child: const Center(
+                  child: Text(
+                    'Checkout',
+                    style: TextStyle(
+                        fontFamily: 'SF Pro Display',
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500),
+                  ),
                 ),
               ),
             )

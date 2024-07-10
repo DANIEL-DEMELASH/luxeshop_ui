@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/pages/checkout_page.dart';
 import 'package:flutter/material.dart';
 
 import '../config/constants.dart';
@@ -109,22 +110,30 @@ class _MyCartState extends State<MyCart> {
             ),
             Column(
               children: [
-                Container(
-                  width: MediaQuery.of(context).size.width / 3.5,
-                  height: 50,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-                  decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: const Center(
-                    child: Text(
-                      'Checkout',
-                      style: TextStyle(
-                          fontFamily: 'SF Pro Display',
-                          color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CheckOutPage()));
+                  },
+                  child: Container(
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    height: 50,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 26, vertical: 14),
+                    decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: const Center(
+                      child: Text(
+                        'Checkout',
+                        style: TextStyle(
+                            fontFamily: 'SF Pro Display',
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500),
+                      ),
                     ),
                   ),
                 )
