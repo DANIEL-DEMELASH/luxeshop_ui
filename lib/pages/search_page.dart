@@ -52,12 +52,7 @@ class SearchPage extends StatelessWidget {
                 borderRadius: BorderRadius.circular(4),
               ),
               prefixIcon: IconButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SearchPage()));
-                },
+                onPressed: () {},
                 icon: Icon(
                   Icons.search,
                   color: tertiaryColor,
@@ -80,6 +75,148 @@ class SearchPage extends StatelessWidget {
               ),
             ),
           ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Popular Search',
+              style: TextStyle(
+                  fontFamily: 'SF Pro Display',
+                  color: secondaryColor,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16),
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 70,
+                  padding: const EdgeInsets.only(
+                      left: 10, top: 12, bottom: 12, right: 30),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/fossil-watch.jpeg',
+                        width: 40,
+                        height: double.infinity,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        'Fossil Watch',
+                        style: TextStyle(
+                            color: secondaryColor,
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 70,
+                  padding: const EdgeInsets.only(
+                      left: 10, top: 12, bottom: 12, right: 30),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/apple-iphone-14-pro.jpg',
+                        width: 40,
+                        height: double.infinity,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        'Iphone 14 Pro',
+                        style: TextStyle(
+                            color: secondaryColor,
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 70,
+                  width: MediaQuery.of(context).size.width / 2.4,
+                  padding: const EdgeInsets.only(
+                      left: 10, top: 12, bottom: 12, right: 30),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/gaming-chair.jpg',
+                        width: 30,
+                        height: double.infinity,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        'Gaming Chair',
+                        style: TextStyle(
+                            overflow: TextOverflow.ellipsis,
+                            color: secondaryColor,
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 70,
+                  padding: const EdgeInsets.only(
+                      left: 10, top: 12, bottom: 12, right: 30),
+                  decoration: BoxDecoration(
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/new-balance.jpeg',
+                        width: 40,
+                        height: double.infinity,
+                      ),
+                      const SizedBox(
+                        width: 12,
+                      ),
+                      Text(
+                        'New Balance',
+                        style: TextStyle(
+                            color: secondaryColor,
+                            fontFamily: 'SF Pro Display',
+                            fontWeight: FontWeight.w500),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
