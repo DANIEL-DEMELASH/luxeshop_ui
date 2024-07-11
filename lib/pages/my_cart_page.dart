@@ -167,7 +167,7 @@ class _MyCartState extends State<MyCart> {
               CartItem(
                 selectedValue: 'none',
                 list: const [],
-                imageUrl: 'assets/images/airpods-pro.webp',
+                imageUrl: 'assets/images/airpods-pro.png',
                 name: 'Airpods Pro 2nd generation with USB-C',
                 discountPrice: 'IDR 3.499.000',
                 discount: 10,
@@ -180,7 +180,7 @@ class _MyCartState extends State<MyCart> {
               CartItem(
                 selectedValue: _selectedValue,
                 list: list,
-                imageUrl: 'assets/images/hoodie.webp',
+                imageUrl: 'assets/images/hoodie.png',
                 name: 'Adicolor Neuclassics Men\'s Hoodie',
                 discountPrice: '',
                 discount: 0,
@@ -193,7 +193,7 @@ class _MyCartState extends State<MyCart> {
               CartItem(
                 selectedValue: _selectedValue2,
                 list: list,
-                imageUrl: 'assets/images/nba-bulls-jogger.webp',
+                imageUrl: 'assets/images/nba-bulls-jogger.png',
                 name: 'NBA Bulls Men\'s Jogger',
                 discountPrice: 'IDR 391.300',
                 discount: 7,
