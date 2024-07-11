@@ -33,40 +33,50 @@ class GridItem extends StatelessWidget {
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Stack(children: [
-              SizedBox(
-                height: 150,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Image.asset(imageUrl),
+            Align(
+              alignment: Alignment.center,
+              child: Stack(children: [
+                SizedBox(
+                  height: 150,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Image.asset(imageUrl),
+                  ),
                 ),
-              ),
-              if (discount > 0)
-                Positioned(
-                    right: 0,
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        color: blurredPinkColor,
-                        borderRadius: BorderRadius.circular(25),
-                      ),
-                      child: Text(
-                        '$discount% off',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Display', color: pinkColor),
-                      ),
-                    ))
-            ]),
-            Text(
-              name,
-              style: TextStyle(
+                if (discount > 0)
+                  Positioned(
+                      right: 0,
+                      child: Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: blurredPinkColor,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Text(
+                          '$discount% off',
+                          style: TextStyle(
+                              fontFamily: 'SF Pro Display', color: pinkColor),
+                        ),
+                      ))
+              ]),
+            ),
+            const SizedBox(
+              height: 4,
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width / 2.5,
+              child: Text(
+                name,
+                style: TextStyle(
                   color: secondaryColor,
                   fontSize: 12,
                   fontFamily: 'SF Pro Display',
                   fontWeight: FontWeight.w500,
-                  overflow: TextOverflow.ellipsis),
+                ),
+              ),
             ),
             const SizedBox(
               height: 4,
@@ -75,7 +85,7 @@ class GridItem extends StatelessWidget {
               price,
               style: TextStyle(
                   color: discount > 0 ? tertiaryColor : secondaryColor,
-                  fontSize: 14,
+                  fontSize: discount > 0 ? 14 : 16,
                   fontFamily: 'SF Pro Display',
                   fontWeight: FontWeight.w500,
                   decoration: discount > 0

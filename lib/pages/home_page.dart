@@ -1,6 +1,7 @@
 import 'package:ecommerce_ui/config/constants.dart';
 import 'package:ecommerce_ui/pages/search_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../widgets/category_widget.dart';
 import '../widgets/grid_item.dart';
@@ -335,13 +336,10 @@ class HomePage extends StatelessWidget {
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: GridView.count(
+              child: StaggeredGrid.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 10,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                childAspectRatio: .60,
                 children: const [
                   GridItem(
                     imageUrl: 'assets/images/apple-ipad-pro-11-2022.jpg',
