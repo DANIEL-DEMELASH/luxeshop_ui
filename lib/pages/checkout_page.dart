@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/pages/tracking_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -94,7 +95,7 @@ class CheckOutPage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const CheckOutPage()));
+                            builder: (context) => const TrackingPage()));
                   },
                   child: Container(
                     width: MediaQuery.of(context).size.width / 3,

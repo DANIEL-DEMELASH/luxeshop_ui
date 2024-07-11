@@ -81,7 +81,7 @@ class SearchPage extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -225,7 +225,7 @@ class SearchPage extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 20),
               Text(
                 'Recommend for You',
                 style: TextStyle(
@@ -234,7 +234,7 @@ class SearchPage extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                     fontSize: 16),
               ),
-              const SizedBox(height: 12),
+              const SizedBox(height: 15),
               StaggeredGrid.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
