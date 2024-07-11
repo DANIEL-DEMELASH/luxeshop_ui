@@ -101,6 +101,7 @@ class SearchPage extends StatelessWidget {
                 children: [
                   Container(
                     height: 70,
+                    width: MediaQuery.of(context).size.width / 2.3,
                     padding: const EdgeInsets.only(
                         left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
@@ -110,7 +111,7 @@ class SearchPage extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/fossil-watch.jpeg',
-                          width: 40,
+                          width: 37,
                           height: double.infinity,
                         ),
                         const SizedBox(
@@ -121,13 +122,15 @@ class SearchPage extends StatelessWidget {
                           style: TextStyle(
                               color: secondaryColor,
                               fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500,
+                              overflow: TextOverflow.ellipsis),
                         )
                       ],
                     ),
                   ),
                   Container(
                     height: 70,
+                    width: MediaQuery.of(context).size.width / 2.3,
                     padding: const EdgeInsets.only(
                         left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
@@ -137,7 +140,7 @@ class SearchPage extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/apple-iphone-14-pro.jpg',
-                          width: 40,
+                          width: 37,
                           height: double.infinity,
                         ),
                         const SizedBox(
@@ -146,6 +149,7 @@ class SearchPage extends StatelessWidget {
                         Text(
                           'Iphone 14 Pro',
                           style: TextStyle(
+                              overflow: TextOverflow.ellipsis,
                               color: secondaryColor,
                               fontFamily: 'SF Pro Display',
                               fontWeight: FontWeight.w500),
@@ -163,7 +167,7 @@ class SearchPage extends StatelessWidget {
                 children: [
                   Container(
                     height: 70,
-                    width: MediaQuery.of(context).size.width / 2.4,
+                    width: MediaQuery.of(context).size.width / 2.3,
                     padding: const EdgeInsets.only(
                         left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
@@ -173,7 +177,7 @@ class SearchPage extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/gaming-chair.png',
-                          width: 30,
+                          width: 37,
                           height: double.infinity,
                         ),
                         const SizedBox(
@@ -192,6 +196,7 @@ class SearchPage extends StatelessWidget {
                   ),
                   Container(
                     height: 70,
+                    width: MediaQuery.of(context).size.width / 2.3,
                     padding: const EdgeInsets.only(
                         left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
@@ -201,7 +206,7 @@ class SearchPage extends StatelessWidget {
                       children: [
                         Image.asset(
                           'assets/images/new-balance.png',
-                          width: 40,
+                          width: 37,
                           height: double.infinity,
                         ),
                         const SizedBox(
@@ -212,7 +217,8 @@ class SearchPage extends StatelessWidget {
                           style: TextStyle(
                               color: secondaryColor,
                               fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500),
+                              fontWeight: FontWeight.w500,
+                              overflow: TextOverflow.ellipsis),
                         )
                       ],
                     ),
