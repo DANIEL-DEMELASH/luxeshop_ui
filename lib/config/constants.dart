@@ -17,7 +17,7 @@ TextStyle secondaryTextStyle =
 
 TextStyle tertiaryTextStyle = TextStyle(
   color: tertiaryColor,
-  fontSize: 14,
+  fontWeight: FontWeight.w500,
 );
 
 TextStyle bigTextStyle = const TextStyle(
