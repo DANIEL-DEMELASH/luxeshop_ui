@@ -11,26 +11,8 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: CircleAvatar(
-              radius: 18,
-              backgroundColor: tertiaryColor,
-              child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
-            ),
-          ),
-        ),
+        leading: const BackButton(),
         title: Container(
           height: 40,
           margin: const EdgeInsets.only(right: 10),
@@ -40,6 +22,7 @@ class SearchPage extends StatelessWidget {
           ),
         ),
       ),
+      
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
@@ -48,15 +31,13 @@ class SearchPage extends StatelessWidget {
             children: [
               Text(
                 'Popular Search',
-                style: TextStyle(
-                    fontFamily: 'SF Pro Display',
-                    color: secondaryColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16),
+                style: secondaryTextStyle.copyWith(fontSize: 16),
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -75,20 +56,19 @@ class SearchPage extends StatelessWidget {
                           width: 37,
                           height: double.infinity,
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Text(
                           'Fossil Watch',
-                          style: TextStyle(
-                              color: secondaryColor,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              overflow: TextOverflow.ellipsis),
+                          style: secondaryTextStyle.copyWith(overflow: TextOverflow.ellipsis),
                         )
                       ],
                     ),
                   ),
+                  
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
@@ -104,25 +84,25 @@ class SearchPage extends StatelessWidget {
                           width: 37,
                           height: double.infinity,
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Text(
                           'Iphone 14 Pro',
-                          style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              color: secondaryColor,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500),
+                          style: secondaryTextStyle.copyWith(overflow: TextOverflow.ellipsis,),
                         )
                       ],
                     ),
                   ),
                 ],
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -141,20 +121,19 @@ class SearchPage extends StatelessWidget {
                           width: 37,
                           height: double.infinity,
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Text(
                           'Gaming Chair',
-                          style: TextStyle(
-                              overflow: TextOverflow.ellipsis,
-                              color: secondaryColor,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500),
+                          style: secondaryTextStyle.copyWith(overflow: TextOverflow.ellipsis,),
                         )
                       ],
                     ),
                   ),
+                  
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
@@ -170,32 +149,30 @@ class SearchPage extends StatelessWidget {
                           width: 37,
                           height: double.infinity,
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Text(
                           'New Balance',
-                          style: TextStyle(
-                              color: secondaryColor,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              overflow: TextOverflow.ellipsis),
+                          style: secondaryTextStyle.copyWith(overflow: TextOverflow.ellipsis,),
                         )
                       ],
                     ),
                   ),
                 ],
               ),
+              
               const SizedBox(height: 20),
+              
               Text(
                 'Recommend for You',
-                style: TextStyle(
-                    fontFamily: 'SF Pro Display',
-                    color: secondaryColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 16),
+                style: secondaryTextStyle.copyWith(fontSize: 16),
               ),
+              
               const SizedBox(height: 15),
+              
               StaggeredGrid.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,

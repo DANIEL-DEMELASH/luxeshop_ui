@@ -57,34 +57,10 @@ class _ProductDetailState extends State<ProductDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: CircleAvatar(
-              radius: 18,
-              backgroundColor: tertiaryColor,
-              child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
-            ),
-          ),
-        ),
-        title: const Text(
-          'Detail Product',
-          style: TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontWeight: FontWeight.w500,
-              fontSize: 20),
-        ),
-        centerTitle: true,
+        leading: const BackButton(),
+        title: const Text('Detail Product'),
+        
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 16.0),
@@ -103,6 +79,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ),
         ],
       ),
+      
       bottomNavigationBar: SizedBox(
         width: double.infinity,
         height: 80,
@@ -128,13 +105,14 @@ class _ProductDetailState extends State<ProductDetail> {
                       'assets/images/shopping-bag-primary.png',
                       width: 20,
                     ),
+                    
                     const SizedBox(
                       width: 8,
                     ),
+                    
                     Text(
                       'Add to Cart',
                       style: TextStyle(
-                          fontFamily: 'SF Pro Display',
                           color: primaryColor,
                           fontSize: 16,
                           fontWeight: FontWeight.w500),
@@ -143,6 +121,7 @@ class _ProductDetailState extends State<ProductDetail> {
                 ),
               ),
             ),
+            
             GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -162,7 +141,6 @@ class _ProductDetailState extends State<ProductDetail> {
                   child: Text(
                     'Checkout',
                     style: TextStyle(
-                        fontFamily: 'SF Pro Display',
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.w500),
@@ -173,6 +151,7 @@ class _ProductDetailState extends State<ProductDetail> {
           ],
         ),
       ),
+      
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -199,46 +178,50 @@ class _ProductDetailState extends State<ProductDetail> {
                           activeIndex = index;
                         })),
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Center(child: buildIndicator()),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
                     'Ipad Pro 6th Generation 11 Inch 2022',
                     style: TextStyle(
-                        fontFamily: 'SF Pro Display',
                         fontSize: 18,
                         fontWeight: FontWeight.w400,
                         color: secondaryColor),
                   ),
+                  
                   Icon(
                     Icons.favorite_outline,
                     color: tertiaryColor,
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Row(
                 children: [
                   Text(
                     'IDR 15.299.000',
-                    style: TextStyle(
-                        color: secondaryColor,
-                        fontSize: 20,
-                        fontFamily: 'SF Pro Display',
-                        fontWeight: FontWeight.w500),
+                    style: secondaryTextStyle.copyWith(fontSize: 20,),
                   ),
+                  
                   const SizedBox(
                     width: 12,
                   ),
+                  
                   Container(
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
@@ -248,56 +231,56 @@ class _ProductDetailState extends State<ProductDetail> {
                     ),
                     child: Text(
                       '6% off',
-                      style: TextStyle(
-                          fontFamily: 'SF Pro Display', color: pinkColor),
+                      style: TextStyle(color: pinkColor),
                     ),
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Text(
                 'IDR 16.999.000',
                 style: TextStyle(
                     color: tertiaryColor,
                     fontSize: 18,
-                    fontFamily: 'SF Pro Display',
                     fontWeight: FontWeight.w500,
                     decoration: TextDecoration.lineThrough,
                     decorationColor: tertiaryColor),
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Text(
                 'Description Product',
-                style: TextStyle(
-                    fontFamily: 'SF Pro Display',
-                    color: secondaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                style: secondaryTextStyle.copyWith(fontSize: 16),
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               const ExpandableText(
                   text:
                       'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo quam nobis nam autem quis, praesentium eius cupiditate possimus fugit aspernatur voluptate provident sed. Blanditiis illum itaque dolorum dolorem quae autem voluptatum necessitatibus aliquam, corporis id praesentium ducimus nihil amet explicabo repellendus iusto maxime voluptatibus sapiente inventore soluta deleniti, a error impedit! Provident consectetur optio, numquam accusantium odit commodi esse ipsa animi obcaecati a libero molestiae at perferendis error incidunt sunt quam, ipsum quo! Qui aperiam itaque dolor expedita officiis nulla dolore. Harum et, ea, consectetur, ratione quam rerum obcaecati exercitationem eos autem ducimus quibusdam officia recusandae quae voluptate voluptatibus temporibus incidunt nostrum deserunt? Voluptatum, adipisci. Veniam enim nam libero cum sapiente maiores reprehenderit deleniti placeat obcaecati mollitia blanditiis exercitationem porro, quam dolorem alias quos, dolores dolorum est, hic delectus voluptates eligendi saepe distinctio. Sint illo totam deleniti tempora, minus quos necessitatibus esse delectus, laudantium voluptate eius vel explicabo adipisci eos porro optio ut velit corporis praesentium accusantium harum atque omnis.'),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Text(
                 'Type',
-                style: TextStyle(
-                    fontFamily: 'SF Pro Display',
-                    color: secondaryColor,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500),
+                style: secondaryTextStyle.copyWith(fontSize: 16),
               ),
+              
               const SizedBox(
                 height: 12,
               ),
+              
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -309,25 +292,20 @@ class _ProductDetailState extends State<ProductDetail> {
                         children: [
                           Text(
                             'Colors : ',
-                            style: TextStyle(
-                                fontFamily: 'SF Pro Display',
-                                color: tertiaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                            style: tertiaryTextStyle.copyWith(fontSize: 16),
                           ),
+                          
                           Text(
                             'Space Gray',
-                            style: TextStyle(
-                                fontFamily: 'SF Pro Display',
-                                color: secondaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                            style: secondaryTextStyle.copyWith(fontSize: 16),
                           )
                         ],
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -343,9 +321,11 @@ class _ProductDetailState extends State<ProductDetail> {
                               ),
                             ),
                           ),
+                          
                           const SizedBox(
                             width: 8,
                           ),
+                          
                           CircleAvatar(
                             radius: 20,
                             backgroundColor: grayColor,
@@ -358,6 +338,7 @@ class _ProductDetailState extends State<ProductDetail> {
                       )
                     ],
                   ),
+                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -365,25 +346,20 @@ class _ProductDetailState extends State<ProductDetail> {
                         children: [
                           Text(
                             'Capacity : ',
-                            style: TextStyle(
-                                fontFamily: 'SF Pro Display',
-                                color: tertiaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                            style: tertiaryTextStyle.copyWith(fontSize: 16),
                           ),
+                          
                           Text(
                             'Wi-fi',
-                            style: TextStyle(
-                                fontFamily: 'SF Pro Display',
-                                color: secondaryColor,
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500),
+                            style: secondaryTextStyle.copyWith(fontSize: 16),
                           )
                         ],
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       Row(
                         children: [
                           Container(
@@ -395,9 +371,10 @@ class _ProductDetailState extends State<ProductDetail> {
                                 border: Border.all(color: pinkColor)),
                             child: Text(
                               'Wi-fi',
-                              style: TextStyle(fontSize: 14, color: pinkColor),
+                              style: TextStyle(color: pinkColor),
                             ),
                           ),
+                          
                           Container(
                             margin: const EdgeInsets.only(left: 8),
                             padding: const EdgeInsets.symmetric(
@@ -408,8 +385,7 @@ class _ProductDetailState extends State<ProductDetail> {
                                 border: Border.all(color: tertiaryColor)),
                             child: Text(
                               'Wi-fi + Cellular',
-                              style: TextStyle(
-                                  fontSize: 14, color: secondaryColor),
+                              style: TextStyle(color: secondaryColor),
                             ),
                           ),
                         ],
