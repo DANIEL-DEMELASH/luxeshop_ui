@@ -1,12 +1,14 @@
-import 'package:ecommerce_ui/config/constants.dart';
-import 'package:ecommerce_ui/pages/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../config/constants.dart';
 import '../widgets/category_widget.dart';
 import '../widgets/grid_item.dart';
+import '../widgets/my_icon.dart';
+import '../widgets/reusable_text_field.dart';
 import '../widgets/square_painter.dart';
 import 'my_cart_page.dart';
+import 'search_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,9 +16,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        centerTitle: false,
+        
         leading: Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: Image.asset(
@@ -24,319 +26,220 @@ class HomePage extends StatelessWidget {
             width: 35,
           ),
         ),
-        title: Text(
+        
+        title: const Text(
           'Luxeshop',
-          style: TextStyle(
-              color: secondaryColor,
-              fontFamily: 'SF Pro Display',
-              fontSize: 18.0,
-              fontWeight: FontWeight.w500),
+          style: TextStyle(fontSize: 18.0),
         ),
+        
         actions: [
           IconButton(
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const MyCart()));
               },
-              icon: Container(
-                  decoration: BoxDecoration(
-                      border: Border.all(color: tertiaryColor),
-                      borderRadius: BorderRadius.circular(4)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Badge(
-                        child: Image.asset(
-                      'assets/images/shopping-bag.png',
-                      width: 25,
-                    )),
-                  ))),
-          IconButton(
-              onPressed: () {},
-              icon: Container(
-                  margin: const EdgeInsets.only(right: 10),
-                  decoration: BoxDecoration(
-                      border: Border.all(color: tertiaryColor),
-                      borderRadius: BorderRadius.circular(4)),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Badge(
-                        child: Image.asset(
-                      'assets/images/notification-bell.png',
-                      width: 25,
-                    )),
-                  ))),
+              icon: MyIcon(
+                icon: Image.asset(
+                  'assets/images/shopping-bag.png',
+                  width: 25,
+                ),
+              )),
+          
+          Padding(
+            padding: const EdgeInsets.only(right: 10.0),
+            child: IconButton(
+                onPressed: () {},
+                icon: MyIcon(
+                    icon: Image.asset(
+                  'assets/images/notification-bell.png',
+                  width: 25,
+                ))),
+          ),
         ],
       ),
-      body: CustomScrollView(
-        slivers: [
-          SliverToBoxAdapter(
-            child: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-              child: Column(
-                children: [
-                  SizedBox(
-                    height: 45,
-                    child: TextField(
-                      textAlignVertical: TextAlignVertical.center,
-                      decoration: InputDecoration(
-                        hintText: 'Find you needed..',
-                        hintStyle: TextStyle(
-                          color: tertiaryColor,
-                          fontSize: 14,
-                          fontFamily: 'SF Pro Display',
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            color: tertiaryColor,
-                            width: 0.5,
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: secondaryColor, width: 0.5),
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        prefixIcon: IconButton(
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const SearchPage()));
-                          },
-                          icon: Icon(
-                            Icons.search,
+      
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+          child: Column(
+            children: [
+              
+              SizedBox(
+                height: 45,
+                child: ReusableTextField(
+                  hintText: 'Find you needed..',
+                  onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const SearchPage())),
+                ),
+              ),
+              
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                height: 40,
+                child: Row(
+                  children: [
+                    Image.asset(
+                      'assets/images/location-small.png',
+                      height: 20,
+                    ),
+                    
+                    const SizedBox(width: 4),
+                    
+                    Expanded(
+                      child: RichText(
+                        overflow: TextOverflow.ellipsis,
+                        text: TextSpan(
+                          style: TextStyle(
                             color: tertiaryColor,
                           ),
-                        ),
-                        labelStyle: TextStyle(
-                          fontFamily: 'SF Pro Display',
-                          color: secondaryColor,
-                          fontWeight: FontWeight.w500,
-                          fontSize: 16,
-                        ),
-                        suffixIcon: Row(
-                          mainAxisSize: MainAxisSize.min,
+                          text: 'Deliver to ',
                           children: [
-                            Icon(
-                              Icons.filter_list,
-                              color: tertiaryColor,
-                            ),
+                            TextSpan(
+                                text:
+                                    'Jl. Rose No. 123 Block A, Cipete Sub-District, Cipete Sub-District',
+                                style: secondaryTextStyle),
                           ],
                         ),
                       ),
                     ),
-                  ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(vertical: 10),
-                    height: 40,
-                    child: Row(
-                      children: [
-                        Image.asset(
-                          'assets/images/location-small.png',
-                          height: 20,
-                        ),
-                        const SizedBox(width: 4),
-                        Expanded(
-                          child: RichText(
-                            overflow: TextOverflow.ellipsis,
-                            text: TextSpan(
-                              style: TextStyle(
-                                color: tertiaryColor,
-                                fontFamily: 'SF Pro Display',
-                              ),
-                              text: 'Deliver to ',
-                              children: [
-                                TextSpan(
-                                  text:
-                                      'Jl. Rose No. 123 Block A, Cipete Sub-District, Cipete Sub-District',
-                                  style: TextStyle(
-                                    color: secondaryColor,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CategoryWidget(
-                          text: 'Electronic',
-                          imageUrl: 'assets/images/electronics.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Food & Drink',
-                          imageUrl: 'assets/images/food-and-drink.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Accesories',
-                          imageUrl: 'assets/images/accesories.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Beauty',
-                          imageUrl: 'assets/images/makeup.png',
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 12.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        CategoryWidget(
-                          text: 'Furniture',
-                          imageUrl: 'assets/images/furniture.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Fashion',
-                          imageUrl: 'assets/images/fashion.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Health',
-                          imageUrl: 'assets/images/health.png',
-                        ),
-                        CategoryWidget(
-                          text: 'Stationary',
-                          imageUrl: 'assets/images/stationery.png',
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    height: 180,
-                    width: double.infinity,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(25),
-                      child: CustomPaint(
-                        painter: SquarePainter(),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                            left: 20,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  ],
+                ),
+              ),
+              
+              const SizedBox(height: 8),
+              
+              SizedBox(
+                height: 230,
+                child: GridView.builder(
+                    itemCount: categories.length,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 4,
+                            mainAxisSpacing: 20,
+                            crossAxisSpacing: 10,
+                            childAspectRatio: 0.8),
+                    itemBuilder: (BuildContext context, int index) {
+                      var category = categories[index];
+                      return CategoryWidget(
+                        text: category['title'],
+                        imageUrl: category['imageUrl'],
+                      );
+                    }),
+              ),
+              
+              const SizedBox(height: 20),
+              
+              SizedBox(
+                height: 180,
+                width: double.infinity,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(25),
+                  child: CustomPaint(
+                    painter: SquarePainter(),
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                        left: 20,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  const Text(
-                                    '6.6 Flash Sale',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontFamily: 'SF Pro Display',
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                  const Text(
-                                    'Cashback Up to 100%',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 16,
-                                      fontFamily: 'SF Pro Display',
-                                      fontWeight: FontWeight.w300,
-                                    ),
-                                  ),
-                                  Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 16, vertical: 4),
-                                    decoration: BoxDecoration(
-                                      color: primaryColor,
-                                      borderRadius: BorderRadius.circular(4),
-                                    ),
-                                    child: const Text(
-                                      'Shop Now',
-                                      style: TextStyle(
-                                          fontFamily: 'SF Pro Display',
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ),
-                                ],
+                              
+                              Text(
+                                '6.6 Flash Sale',
+                                style:
+                                    bigTextStyle.copyWith(color: Colors.white),
                               ),
-                              Image.asset('assets/images/pink-hoodie.png'),
+                              
+                              const Text(
+                                'Cashback Up to 100%',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w300,
+                                ),
+                              ),
+                              
+                              Container(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 16, vertical: 4),
+                                decoration: BoxDecoration(
+                                  color: primaryColor,
+                                  borderRadius: BorderRadius.circular(4),
+                                ),
+                                child: const Text(
+                                  'Shop Now',
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500),
+                                ),
+                              ),
                             ],
                           ),
-                        ),
+                          
+                          Image.asset('assets/images/pink-hoodie.png'),
+                        ],
                       ),
                     ),
                   ),
-                  const SizedBox(height: 20),
+                ),
+              ),
+              
+              const SizedBox(height: 20),
+              
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Flash Sale',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              color: secondaryColor,
-                            ),
-                          ),
-                          const SizedBox(width: 8),
-                          Text(
-                            'Ends in',
-                            style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontSize: 14,
-                              fontWeight: FontWeight.w400,
-                              color: tertiaryColor,
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: pinkColor,
-                              borderRadius: BorderRadius.circular(25),
-                            ),
-                            child: const Text(
-                              '12 : 56 : 32',
-                              style: TextStyle(
-                                fontFamily: 'SF Pro Display',
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                      Text('Flash Sale',
+                          style: bigTextStyle.copyWith(color: secondaryColor)),
+                      
+                      const SizedBox(width: 8),
+                      
                       Text(
-                        'See all',
+                        'Ends in',
                         style: TextStyle(
-                          color: primaryColor,
-                          fontFamily: 'SF Pro Display',
-                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: tertiaryColor,
+                        ),
+                      ),
+                      
+                      const SizedBox(width: 4),
+                      
+                      Container(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 12, vertical: 4),
+                        decoration: BoxDecoration(
+                          color: pinkColor,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: const Text(
+                          '12 : 56 : 32',
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: 20),
+                  
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      color: primaryColor,
+                      fontSize: 16,
+                    ),
+                  ),
                 ],
               ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: StaggeredGrid.count(
+              
+              const SizedBox(height: 20),
+              
+              StaggeredGrid.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 20,
                 crossAxisSpacing: 10,
@@ -356,15 +259,10 @@ class HomePage extends StatelessWidget {
                     discountPrice: 'IDR 17.537.317',
                   ),
                 ],
-              ),
-            ),
+              )
+            ],
           ),
-          const SliverToBoxAdapter(
-            child: SizedBox(
-              height: 30,
-            ),
-          )
-        ],
+        ),
       ),
     );
   }

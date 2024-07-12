@@ -3,6 +3,7 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../config/constants.dart';
 import '../widgets/grid_item.dart';
+import '../widgets/reusable_text_field.dart';
 
 class SearchPage extends StatelessWidget {
   const SearchPage({super.key});
@@ -33,49 +34,9 @@ class SearchPage extends StatelessWidget {
         title: Container(
           height: 40,
           margin: const EdgeInsets.only(right: 10),
-          child: TextField(
-            textAlignVertical: TextAlignVertical.center,
-            decoration: InputDecoration(
-              hintText: 'Find you needed..',
-              hintStyle: TextStyle(
-                color: tertiaryColor,
-                fontSize: 14,
-                fontFamily: 'SF Pro Display',
-              ),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: tertiaryColor,
-                  width: 0.5,
-                ),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: secondaryColor, width: 0.5),
-                borderRadius: BorderRadius.circular(4),
-              ),
-              prefixIcon: IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.search,
-                  color: tertiaryColor,
-                ),
-              ),
-              labelStyle: TextStyle(
-                fontFamily: 'SF Pro Display',
-                color: secondaryColor,
-                fontWeight: FontWeight.w500,
-                fontSize: 16,
-              ),
-              suffixIcon: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.filter_list,
-                    color: tertiaryColor,
-                  ),
-                ],
-              ),
-            ),
+          child: ReusableTextField(
+            hintText: 'Find you needed..',
+            onPressed: () {},
           ),
         ),
       ),
@@ -277,3 +238,4 @@ class SearchPage extends StatelessWidget {
     );
   }
 }
+

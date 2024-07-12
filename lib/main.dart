@@ -1,3 +1,4 @@
+import 'package:ecommerce_ui/config/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'pages/bottom_navigation_page.dart';
@@ -11,9 +12,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: BottomNavigationPage(),
+      home: const BottomNavigationPage(),
+      
+      theme: ThemeData(
+          fontFamily: 'SF Pro Display',
+          scaffoldBackgroundColor: defaultBgColor,
+          appBarTheme: AppBarTheme(
+              backgroundColor: defaultBgColor,
+              centerTitle: true,
+              titleTextStyle: secondaryTextStyle.copyWith(fontSize: 20.0))),
+      
     );
   }
 }

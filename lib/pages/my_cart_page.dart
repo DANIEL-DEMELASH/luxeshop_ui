@@ -41,10 +41,7 @@ class _MyCartState extends State<MyCart> {
         ),
         title: const Text(
           'My Cart',
-          style: TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontWeight: FontWeight.w500,
-              fontSize: 20),
+          style: TextStyle(fontSize: 20),
         ),
         centerTitle: true,
       ),
