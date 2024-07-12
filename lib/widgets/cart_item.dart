@@ -35,6 +35,7 @@ class _CartItemState extends State<CartItem> {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
           border: Border.all(color: containerBorderColor, width: 2),
           borderRadius: BorderRadius.circular(12)),
@@ -45,6 +46,7 @@ class _CartItemState extends State<CartItem> {
           Column(
             children: [
               Stack(children: [
+                
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 24.0, vertical: 14.0),
@@ -53,6 +55,7 @@ class _CartItemState extends State<CartItem> {
                     width: 50,
                   ),
                 ),
+                
                 Positioned(
                   top: -10,
                   left: -10,
@@ -75,18 +78,20 @@ class _CartItemState extends State<CartItem> {
               ])
             ],
           ),
+          
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 widget.name,
                 overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                    color: tertiaryColor, fontFamily: 'SF Pro Display'),
+                style: TextStyle(color: tertiaryColor),
               ),
+              
               const SizedBox(
                 height: 8,
               ),
+              
               if (widget.list.isNotEmpty)
                 Column(
                   children: [
@@ -100,7 +105,6 @@ class _CartItemState extends State<CartItem> {
                           icon: const Icon(Icons.arrow_drop_down),
                           elevation: 0,
                           style: TextStyle(
-                            fontFamily: 'SF Pro Display',
                             color: secondaryColor,
                           ),
                           padding: const EdgeInsets.only(left: 4),
@@ -113,26 +117,25 @@ class _CartItemState extends State<CartItem> {
                           }).toList(),
                           onChanged: (value) {}),
                     ),
+                    
                     const SizedBox(
                       height: 8,
                     ),
                   ],
                 ),
+                
               if (widget.discount > 0)
                 Column(
                   children: [
                     Row(
                       children: [
                         Text(widget.discountPrice,
-                            style: TextStyle(
-                              color: secondaryColor,
-                              fontSize: 18,
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                            )),
+                            style: secondaryTextStyle.copyWith(fontSize: 18)),
+                            
                         const SizedBox(
                           width: 8,
                         ),
+                        
                         Container(
                           padding: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 4),
@@ -142,17 +145,18 @@ class _CartItemState extends State<CartItem> {
                           ),
                           child: Text(
                             '10% off',
-                            style: TextStyle(
-                                fontFamily: 'SF Pro Display', color: pinkColor),
+                            style: TextStyle(color: pinkColor),
                           ),
                         )
                       ],
                     ),
+                    
                     const SizedBox(
                       height: 8,
                     ),
                   ],
                 ),
+                
               Column(
                 children: [
                   Text(widget.price,
@@ -161,17 +165,18 @@ class _CartItemState extends State<CartItem> {
                               ? tertiaryColor
                               : secondaryColor,
                           fontSize: widget.discount > 0 ? 14 : 18,
-                          fontFamily: 'SF Pro Display',
                           fontWeight: FontWeight.w500,
                           decoration: widget.discount > 0
                               ? TextDecoration.lineThrough
                               : TextDecoration.none,
                           decorationColor: tertiaryColor)),
+                          
                   const SizedBox(
                     height: 8,
                   )
                 ],
               ),
+              
               SizedBox(
                 width: MediaQuery.of(context).size.width / 1.7,
                 child: Row(
@@ -181,6 +186,7 @@ class _CartItemState extends State<CartItem> {
                       Icons.favorite_outline,
                       color: tertiaryColor,
                     ),
+                    
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -188,19 +194,22 @@ class _CartItemState extends State<CartItem> {
                           Icons.indeterminate_check_box_outlined,
                           color: primaryColor,
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Text(
                           '1',
                           style: TextStyle(
-                              fontFamily: 'SF Pro Display',
                               color: secondaryColor,
                               fontSize: 18),
                         ),
+                        
                         const SizedBox(
                           width: 12,
                         ),
+                        
                         Icon(
                           Icons.add_box_outlined,
                           color: primaryColor,
