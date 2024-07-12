@@ -10,35 +10,11 @@ class TrackingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: GestureDetector(
-            onTap: () => Navigator.pop(context),
-            child: CircleAvatar(
-              radius: 18,
-              backgroundColor: tertiaryColor,
-              child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
-            ),
-          ),
-        ),
-        title: const Text(
-          'Tracking Details',
-          style: TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontWeight: FontWeight.w500,
-              fontSize: 20),
-        ),
-        centerTitle: true,
+        leading: const BackButton(),
+        title: const Text('Tracking Details')
       ),
+      
       bottomNavigationBar: Container(
         width: double.infinity,
         height: 80,
@@ -55,7 +31,6 @@ class TrackingPage extends StatelessWidget {
             child: Text(
               'Live Tracking',
               style: TextStyle(
-                  fontFamily: 'SF Pro Display',
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.w500),
@@ -63,6 +38,7 @@ class TrackingPage extends StatelessWidget {
           ),
         ),
       ),
+      
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20),
@@ -77,47 +53,42 @@ class TrackingPage extends StatelessWidget {
                       width: 60,
                     ),
                   ),
+                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Ipad Pro 6th Generation 11 Inch 2022',
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            color: secondaryColor,
-                            fontFamily: 'SF Pro Display',
-                            fontSize: 16),
+                        style: secondaryTextStyle.copyWith(fontSize: 16),
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       Text(
                         'Space Gray Colors, Wi-fi Only, 256 GB',
                         overflow: TextOverflow.ellipsis,
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                            color: tertiaryColor,
-                            fontFamily: 'SF Pro Display'),
+                        style: tertiaryTextStyle,
                       ),
+                      
                       const SizedBox(
                         height: 12,
                       ),
+                      
                       Row(
                         children: [
                           Text(
                             'ID Order : 17481HAFFJBC',
                             overflow: TextOverflow.ellipsis,
-                            style: TextStyle(
-                                fontWeight: FontWeight.w500,
-                                // fontSize: 16,
-                                color: secondaryColor,
-                                fontFamily: 'SF Pro Display'),
+                            style: secondaryTextStyle,
                           ),
+                          
                           const SizedBox(
                             width: 8,
                           ),
+                          
                           Image.asset(
                             'assets/images/copy.png',
                             width: 20,
@@ -128,15 +99,19 @@ class TrackingPage extends StatelessWidget {
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 15,
               ),
+              
               Divider(
                 color: containerBorderColor,
               ),
+              
               const SizedBox(
                 height: 15,
               ),
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -144,40 +119,39 @@ class TrackingPage extends StatelessWidget {
                     'assets/images/location.png',
                     width: 25,
                   ),
+                  
                   const SizedBox(
                     width: 20,
                   ),
+                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'From',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w500,
-                            color: tertiaryColor),
+                        style: tertiaryTextStyle,
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 1.3,
-                        // margin: const EdgeInsets.only(top: 120),
                         child: Text(
                           'Gambir District, West Jakarta City, DKI Jakarta 12410 Indonesia',
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              color: secondaryColor),
+                          style: secondaryTextStyle,
                         ),
                       )
                     ],
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 15,
               ),
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -185,40 +159,39 @@ class TrackingPage extends StatelessWidget {
                     'assets/images/delivery-truck.png',
                     width: 25,
                   ),
+                  
                   const SizedBox(
                     width: 20,
                   ),
+                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Send To',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w500,
-                            color: tertiaryColor),
+                        style: tertiaryTextStyle,
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 1.3,
-                        // margin: const EdgeInsets.only(top: 120),
                         child: Text(
                           'Jl. Rose No. 123 Block A, Cipete Sub District, Cilandak District, South Jakarta City, DKI Jakarta 12410 Indonesia',
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              color: secondaryColor),
+                          style: secondaryTextStyle,
                         ),
                       )
                     ],
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 15,
               ),
+              
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -226,42 +199,43 @@ class TrackingPage extends StatelessWidget {
                     'assets/images/3d-cube.png',
                     width: 25,
                   ),
+                  
                   const SizedBox(
                     width: 20,
                   ),
+                  
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         'Weight',
-                        style: TextStyle(
-                            fontFamily: 'SF Pro Display',
-                            fontWeight: FontWeight.w500,
-                            color: tertiaryColor),
+                        style: tertiaryTextStyle,
                       ),
+                      
                       const SizedBox(
                         height: 8,
                       ),
+                      
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 1.3,
                         child: Text(
                           '3.5 Kg',
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display',
-                              fontWeight: FontWeight.w500,
-                              color: secondaryColor),
+                          style: secondaryTextStyle,
                         ),
                       )
                     ],
                   )
                 ],
               ),
+              
               const SizedBox(
                 height: 15,
               ),
+              
               Divider(
                 color: containerBorderColor,
               ),
+              
               const MyTimelineTile(
                 isFirst: true,
                 isLast: false,
@@ -273,6 +247,7 @@ class TrackingPage extends StatelessWidget {
                     date: '5 June',
                     time: '12:41 PM'),
               ),
+              
               const MyTimelineTile(
                 isFirst: false,
                 isLast: false,
@@ -284,6 +259,7 @@ class TrackingPage extends StatelessWidget {
                     date: '5 June',
                     time: '15:54 PM'),
               ),
+              
               const MyTimelineTile(
                 isFirst: false,
                 isLast: false,
@@ -295,6 +271,7 @@ class TrackingPage extends StatelessWidget {
                     date: '6 June',
                     time: '08:12 AM'),
               ),
+              
               const MyTimelineTile(
                 isFirst: false,
                 isLast: true,
