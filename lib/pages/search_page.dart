@@ -12,7 +12,24 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: CircleAvatar(
+              radius: 18,
+              backgroundColor: tertiaryColor,
+              child: CircleAvatar(
+                  radius: 17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: secondaryColor,
+                  )),
+            ),
+          ),
+        ),
+        
         title: Container(
           height: 40,
           margin: const EdgeInsets.only(right: 10),

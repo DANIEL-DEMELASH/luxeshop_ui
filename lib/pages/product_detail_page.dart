@@ -1,11 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_ui/config/constants.dart';
-import 'package:ecommerce_ui/pages/my_cart_page.dart';
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
-import '../widgets/expandable_text.dart';
+import 'my_cart_page.dart';
 import 'checkout_page.dart';
+import '../widgets/expandable_text.dart';
+import '../config/constants.dart';
 
 class ProductDetail extends StatefulWidget {
   const ProductDetail({super.key});
@@ -58,7 +58,24 @@ class _ProductDetailState extends State<ProductDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),
+        leading: Padding(
+        padding: const EdgeInsets.only(left: 20.0),
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: CircleAvatar(
+              radius: 18,
+              backgroundColor: tertiaryColor,
+              child: CircleAvatar(
+                  radius: 17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: secondaryColor,
+                  )),
+            ),
+          ),
+        ),
+      
         title: const Text('Detail Product'),
         
         actions: [
@@ -66,15 +83,17 @@ class _ProductDetailState extends State<ProductDetail> {
             padding: const EdgeInsets.only(right: 16.0),
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
-              child: Container(
-                  width: 35,
-                  height: 35,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: tertiaryColor, width: .5),
-                      borderRadius: BorderRadius.circular(25)),
-                  child: const Icon(
+              child: CircleAvatar(
+              radius: 18,
+              backgroundColor: tertiaryColor,
+              child: CircleAvatar(
+                  radius: 17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
                     Icons.share_outlined,
+                    color: secondaryColor,
                   )),
+            ),
             ),
           ),
         ],

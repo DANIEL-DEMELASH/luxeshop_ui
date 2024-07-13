@@ -1,6 +1,6 @@
-import 'package:ecommerce_ui/config/constants.dart';
 import 'package:flutter/material.dart';
 
+import 'config/constants.dart';
 import 'pages/bottom_navigation_page.dart';
 
 void main() {

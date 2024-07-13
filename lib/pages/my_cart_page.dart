@@ -1,24 +1,34 @@
-import 'package:ecommerce_ui/pages/checkout_page.dart';
 import 'package:flutter/material.dart';
+import 'checkout_page.dart';
 
 import '../config/constants.dart';
 import '../widgets/cart_item.dart';
 
 
-class MyCart extends StatefulWidget {
+class MyCart extends StatelessWidget {
   const MyCart({super.key});
-
-  @override
-  State<MyCart> createState() => _MyCartState();
-}
-
-class _MyCartState extends State<MyCart> {
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const BackButton(),  
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: GestureDetector(
+            onTap: () => Navigator.pop(context),
+            child: CircleAvatar(
+              radius: 18,
+              backgroundColor: tertiaryColor,
+              child: CircleAvatar(
+                  radius: 17,
+                  backgroundColor: Colors.white,
+                  child: Icon(
+                    Icons.arrow_back,
+                    color: secondaryColor,
+                  )),
+            ),
+          ),
+        ),  
         title: const Text('My Cart'),
       ),
       

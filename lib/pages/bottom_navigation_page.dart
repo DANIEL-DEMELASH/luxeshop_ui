@@ -1,5 +1,5 @@
-import 'package:ecommerce_ui/pages/home_page.dart';
 import 'package:flutter/material.dart';
+import 'home_page.dart';
 
 import '../config/constants.dart';
 import '../widgets/my_tab.dart';

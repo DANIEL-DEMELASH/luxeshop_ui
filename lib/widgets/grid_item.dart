@@ -1,4 +1,4 @@
-import 'package:ecommerce_ui/pages/product_detail_page.dart';
+import 'package:luxeshop_ui/pages/product_detail_page.dart';
 import 'package:flutter/material.dart';
 
 import '../config/constants.dart';

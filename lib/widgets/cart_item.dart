@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../config/constants.dart';
 
 // ignore: must_be_immutable
-class CartItem extends StatefulWidget {
+class CartItem extends StatelessWidget {
   CartItem({
     super.key,
     required String selectedValue,
@@ -27,16 +27,12 @@ class CartItem extends StatefulWidget {
   bool isChecked;
 
   @override
-  State<CartItem> createState() => _CartItemState();
-}
-
-class _CartItemState extends State<CartItem> {
-  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
+        color: defaultBgColor,
           border: Border.all(color: containerBorderColor, width: 2),
           borderRadius: BorderRadius.circular(12)),
       child: Row(
@@ -51,7 +47,7 @@ class _CartItemState extends State<CartItem> {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 24.0, vertical: 14.0),
                   child: Image.asset(
-                    widget.imageUrl,
+                    imageUrl,
                     width: 50,
                   ),
                 ),
@@ -60,15 +56,16 @@ class _CartItemState extends State<CartItem> {
                   top: -10,
                   left: -10,
                   child: Checkbox(
-                    value: widget.isChecked,
-                    fillColor: widget.isChecked
+                    value: isChecked,
+                    fillColor: isChecked
                         ? WidgetStateProperty.all(primaryColor)
                         : WidgetStateProperty.all(Colors.white),
                     checkColor: Colors.white,
                     onChanged: (value) {
-                      setState(() {
-                        widget.isChecked = !widget.isChecked;
-                      });
+                      // setState(() {
+                        
+                      //   widget.isChecked = !widget.isChecked;
+                      // });
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4)),
@@ -83,7 +80,7 @@ class _CartItemState extends State<CartItem> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                widget.name,
+                name,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: tertiaryColor),
               ),
@@ -92,7 +89,7 @@ class _CartItemState extends State<CartItem> {
                 height: 8,
               ),
               
-              if (widget.list.isNotEmpty)
+              if (list.isNotEmpty)
                 Column(
                   children: [
                     Container(
@@ -101,7 +98,7 @@ class _CartItemState extends State<CartItem> {
                           border: Border.all(color: tertiaryColor),
                           borderRadius: BorderRadius.circular(4)),
                       child: DropdownButton(
-                          value: widget._selectedValue,
+                          value: _selectedValue,
                           icon: const Icon(Icons.arrow_drop_down),
                           elevation: 0,
                           style: TextStyle(
@@ -110,7 +107,7 @@ class _CartItemState extends State<CartItem> {
                           padding: const EdgeInsets.only(left: 4),
                           underline: Container(),
                           alignment: Alignment.center,
-                          items: widget.list
+                          items: list
                               .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                                 value: value, child: Text(value));
@@ -124,12 +121,12 @@ class _CartItemState extends State<CartItem> {
                   ],
                 ),
                 
-              if (widget.discount > 0)
+              if (discount > 0)
                 Column(
                   children: [
                     Row(
                       children: [
-                        Text(widget.discountPrice,
+                        Text(discountPrice,
                             style: secondaryTextStyle.copyWith(fontSize: 18)),
                             
                         const SizedBox(
@@ -159,14 +156,14 @@ class _CartItemState extends State<CartItem> {
                 
               Column(
                 children: [
-                  Text(widget.price,
+                  Text(price,
                       style: TextStyle(
-                          color: widget.discount > 0
+                          color: discount > 0
                               ? tertiaryColor
                               : secondaryColor,
-                          fontSize: widget.discount > 0 ? 14 : 18,
+                          fontSize: discount > 0 ? 14 : 18,
                           fontWeight: FontWeight.w500,
-                          decoration: widget.discount > 0
+                          decoration: discount > 0
                               ? TextDecoration.lineThrough
                               : TextDecoration.none,
                           decorationColor: tertiaryColor)),
