@@ -1,16 +1,6 @@
-# ecommerce_ui
+# luxeshop_ui
 
-A new Flutter project.
+Luxeshop is a sleek and modern ecommerce mobile app UI clone designed to enhance the online shopping experience. Inspired by the stylish Dribbble shot, this app boasts a clean and intuitive interface that seamlessly blends aesthetics with functionality. Featuring a user-friendly layout, high-quality product images, and smooth navigation, Luxeshop ensures that users can effortlessly browse and purchase their favorite items. Perfect for fashion, accessories, and lifestyle products.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- [Here is The Dribbble link](https://dribbble.com/shots/24409190-Luxeshop-Ecommerce-Mobile-App)
