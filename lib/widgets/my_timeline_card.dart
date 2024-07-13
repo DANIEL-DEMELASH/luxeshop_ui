@@ -7,6 +7,7 @@ class MyTimelineCard extends StatelessWidget {
   final String description;
   final String date;
   final String time;
+  
   const MyTimelineCard({
     super.key,
     required this.title,
@@ -22,9 +23,11 @@ class MyTimelineCard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
+            
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
                 Text(
                   title,
                   style: TextStyle(
@@ -32,9 +35,11 @@ class MyTimelineCard extends StatelessWidget {
                       fontFamily: 'SF Pro Display',
                       fontWeight: FontWeight.w500),
                 ),
+                
                 const SizedBox(
                   height: 12,
                 ),
+                
                 Text(
                   description,
                   style: TextStyle(
@@ -43,11 +48,14 @@ class MyTimelineCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 11),
                 ),
+                
               ],
             ),
+            
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                
                 Text(
                   date,
                   style: TextStyle(
@@ -56,6 +64,7 @@ class MyTimelineCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 11),
                 ),
+                
                 Text(
                   time,
                   style: TextStyle(
@@ -64,8 +73,10 @@ class MyTimelineCard extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                       fontSize: 11),
                 ),
+                
               ],
             )
+            
           ],
         ));
   }

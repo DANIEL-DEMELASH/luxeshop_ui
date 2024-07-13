@@ -5,6 +5,7 @@ import '../config/constants.dart';
 class CategoryWidget extends StatelessWidget {
   final String imageUrl;
   final String text;
+  
   const CategoryWidget({
     super.key,
     required this.imageUrl,
@@ -16,6 +17,7 @@ class CategoryWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        
         CircleAvatar(
             backgroundColor: tertiaryColor,
             radius: 35,
@@ -26,10 +28,13 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.all(20.0),
                 child: Image.asset(imageUrl),
               ),
-            )),
+            )
+        ),
+            
         const SizedBox(
           height: 8,
         ),
+        
         Text(
           text,
           style: TextStyle(

@@ -50,6 +50,7 @@ class _ExpandableTextState extends State<ExpandableText> {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
+        
         _readMore && exceededMaxLines
             ? Text(
                 widget.text,
@@ -67,6 +68,7 @@ class _ExpandableTextState extends State<ExpandableText> {
                     fontFamily: 'SF Pro Display',
                     fontWeight: FontWeight.w500),
               ),
+              
         if (exceededMaxLines)
           GestureDetector(
             onTap: _toggleReadMore,
@@ -78,6 +80,7 @@ class _ExpandableTextState extends State<ExpandableText> {
                   fontFamily: 'SF Pro Display'),
             ),
           ),
+          
       ],
     );
   }
