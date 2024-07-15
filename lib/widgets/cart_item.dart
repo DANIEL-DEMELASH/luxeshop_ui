@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../config/constants.dart';
 
 // ignore: must_be_immutable
-class CartItem extends StatelessWidget {
+class CartItem extends StatefulWidget {
   CartItem({
     super.key,
     required String selectedValue,
@@ -27,6 +27,11 @@ class CartItem extends StatelessWidget {
   bool isChecked;
 
   @override
+  State<CartItem> createState() => _CartItemState();
+}
+
+class _CartItemState extends State<CartItem> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(12),
@@ -47,7 +52,7 @@ class CartItem extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(
                       horizontal: 24.0, vertical: 14.0),
                   child: Image.asset(
-                    imageUrl,
+                    widget.imageUrl,
                     width: 50,
                   ),
                 ),
@@ -56,16 +61,15 @@ class CartItem extends StatelessWidget {
                   top: -10,
                   left: -10,
                   child: Checkbox(
-                    value: isChecked,
-                    fillColor: isChecked
+                    value: widget.isChecked,
+                    fillColor: widget.isChecked
                         ? WidgetStateProperty.all(primaryColor)
                         : WidgetStateProperty.all(Colors.white),
                     checkColor: Colors.white,
                     onChanged: (value) {
-                      // setState(() {
-                        
-                      //   widget.isChecked = !widget.isChecked;
-                      // });
+                      setState(() {
+                        widget.isChecked = !widget.isChecked;
+                      });
                     },
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(4)),
@@ -80,7 +84,7 @@ class CartItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                name,
+                widget.name,
                 overflow: TextOverflow.ellipsis,
                 style: TextStyle(color: tertiaryColor),
               ),
@@ -89,7 +93,7 @@ class CartItem extends StatelessWidget {
                 height: 8,
               ),
               
-              if (list.isNotEmpty)
+              if (widget.list.isNotEmpty)
                 Column(
                   children: [
                     Container(
@@ -98,7 +102,7 @@ class CartItem extends StatelessWidget {
                           border: Border.all(color: tertiaryColor),
                           borderRadius: BorderRadius.circular(4)),
                       child: DropdownButton(
-                          value: _selectedValue,
+                          value: widget._selectedValue,
                           icon: const Icon(Icons.arrow_drop_down),
                           elevation: 0,
                           style: TextStyle(
@@ -107,7 +111,7 @@ class CartItem extends StatelessWidget {
                           padding: const EdgeInsets.only(left: 4),
                           underline: Container(),
                           alignment: Alignment.center,
-                          items: list
+                          items: widget.list
                               .map<DropdownMenuItem<String>>((String value) {
                             return DropdownMenuItem<String>(
                                 value: value, child: Text(value));
@@ -121,12 +125,12 @@ class CartItem extends StatelessWidget {
                   ],
                 ),
                 
-              if (discount > 0)
+              if (widget.discount > 0)
                 Column(
                   children: [
                     Row(
                       children: [
-                        Text(discountPrice,
+                        Text(widget.discountPrice,
                             style: secondaryTextStyle.copyWith(fontSize: 18)),
                             
                         const SizedBox(
@@ -156,14 +160,14 @@ class CartItem extends StatelessWidget {
                 
               Column(
                 children: [
-                  Text(price,
+                  Text(widget.price,
                       style: TextStyle(
-                          color: discount > 0
+                          color: widget.discount > 0
                               ? tertiaryColor
                               : secondaryColor,
-                          fontSize: discount > 0 ? 14 : 18,
+                          fontSize: widget.discount > 0 ? 14 : 18,
                           fontWeight: FontWeight.w500,
-                          decoration: discount > 0
+                          decoration: widget.discount > 0
                               ? TextDecoration.lineThrough
                               : TextDecoration.none,
                           decorationColor: tertiaryColor)),

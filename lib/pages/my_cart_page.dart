@@ -4,9 +4,8 @@ import 'checkout_page.dart';
 import '../config/constants.dart';
 import '../widgets/cart_item.dart';
 
-
 class MyCart extends StatelessWidget {
-  const MyCart({super.key});
+  const MyCart({super.key});  
 
   @override
   Widget build(BuildContext context) {
@@ -128,24 +127,30 @@ class MyCart extends StatelessWidget {
       
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Expanded(
-          child: ListView.builder(
-            itemCount: cartItems.length,
-            itemBuilder: (context, index) {
-              var item = cartItems[index];
-            return CartItem(
-                selectedValue: item['selectedValue'],
-                list: item['list'],
-                imageUrl: item['imageUrl'],
-                name: item['name'],
-                discountPrice: item['discountPrice'],
-                discount: item['discount'],
-                price: item['price'],
-                isChecked: item['isChecked'],
-              );
-          }),
+        child: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemCount: cartItems.length,
+                itemBuilder: (context, index) {
+                  var item = cartItems[index];
+                  return CartItem(
+                    selectedValue: item['selectedValue'],
+                    list: item['list'],
+                    imageUrl: item['imageUrl'],
+                    name: item['name'],
+                    discountPrice: item['discountPrice'],
+                    discount: item['discount'],
+                    price: item['price'],
+                    isChecked: item['isChecked'],
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
-    );
+      );
+    
   }
 }
