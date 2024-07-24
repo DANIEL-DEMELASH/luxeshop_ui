@@ -239,26 +239,29 @@ class HomePage extends StatelessWidget {
               
               const SizedBox(height: 20),
               
-              StaggeredGrid.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 10,
-                children: const [
-                  GridItem(
-                    imageUrl: 'assets/images/apple-ipad-pro-11-2022.jpg',
-                    discount: 6,
-                    name: 'Ipad Pro 6th Generation 11 Inch 2022',
-                    price: 'IDR 16.999.000',
-                    discountPrice: 'IDR 15.299.000',
-                  ),
-                  GridItem(
-                    imageUrl: 'assets/images/macbook.webp',
-                    discount: 10,
-                    name: 'Macbook Air M2 (2022) 13 inch',
-                    price: 'IDR 19.485.908',
-                    discountPrice: 'IDR 17.537.317',
-                  ),
-                ],
+              SizedBox(
+                width: double.infinity,
+                child: StaggeredGrid.count(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 20,
+                  crossAxisSpacing: 10,
+                  children: const [
+                    GridItem(
+                      imageUrl: 'assets/images/apple-ipad-pro-11-2022.jpg',
+                      discount: 6,
+                      name: 'Ipad Pro 6th Generation 11 Inch 2022',
+                      price: 'IDR 16.999.000',
+                      discountPrice: 'IDR 15.299.000',
+                    ),
+                    GridItem(
+                      imageUrl: 'assets/images/macbook.webp',
+                      discount: 10,
+                      name: 'Macbook Air M2 (2022) 13 inch',
+                      price: 'IDR 19.485.908',
+                      discountPrice: 'IDR 17.537.317',
+                    ),
+                  ],
+                ),
               )
             ],
           ),
