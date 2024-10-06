@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
+import 'package:card_swiper/card_swiper.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'my_cart_page.dart';
@@ -177,27 +177,33 @@ class _ProductDetailState extends State<ProductDetail> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CarouselSlider.builder(
-                itemCount: ipadImages.length,
-                itemBuilder: (context, index, rIndex) {
-                  String imageUrl = ipadImages[index];
-                  return SizedBox(
-                    width: double.infinity,
-                    child: Image.asset(
-                      'assets/images/$imageUrl',
-                      fit: BoxFit.fitHeight,
-                    ),
-                  );
-                },
-                options: CarouselOptions(
-                    height: 250,
-                    enableInfiniteScroll: false,
-                    viewportFraction: 0.9,
-                    onPageChanged: (index, reason) => setState(() {
-                          activeIndex = index;
-                        })),
+              const SizedBox(
+                height: 12,
               ),
               
+              SizedBox(
+                width: MediaQuery.of(context).size.width,
+                height: 280,
+                child: Swiper(
+                  itemCount: ipadImages.length,
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      width: double.infinity,
+                      child: Image.asset(
+                        'assets/images/${ipadImages[index]}',
+                        fit: BoxFit.fitHeight,
+                      ),
+                    );
+                  },
+                  onIndexChanged: (value) {
+                    setState(() {
+                      activeIndex = value;
+                    });
+                  },
+                  loop: false,
+                ),
+              ),
+
               const SizedBox(
                 height: 12,
               ),
