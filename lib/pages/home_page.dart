@@ -110,6 +110,7 @@ class HomePage extends StatelessWidget {
               SizedBox(
                 height: 230,
                 child: GridView.builder(
+                  physics: const NeverScrollableScrollPhysics(),
                     itemCount: categories.length,
                     gridDelegate:
                         const SliverGridDelegateWithFixedCrossAxisCount(
