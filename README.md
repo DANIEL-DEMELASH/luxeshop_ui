@@ -24,7 +24,7 @@ Luxeshop delivers a premium mobile shopping experience, making it ideal for show
 1. Clone the repository:
 
    ```sh
-   git clone https://github.com/YOUR-USERNAME/luxeshop.git
+   git clone https://github.com/DANIEL-DEMELASH/luxeshop_ui.git
    ```
 
 2. Get packages:
