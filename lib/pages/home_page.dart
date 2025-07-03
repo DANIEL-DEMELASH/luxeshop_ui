@@ -111,7 +111,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 8),
               
               SizedBox(
-                height: 230,
+                height: 250,
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
                   itemCount: categories.length,
