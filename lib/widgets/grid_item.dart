@@ -51,20 +51,19 @@ class GridItem extends StatelessWidget {
                 
                 if (discount > 0)
                   Positioned(
-                      right: 0,
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
-                        decoration: BoxDecoration(
-                          color: blurredPinkColor,
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        child: Text(
-                          '$discount% off',
-                          style: TextStyle(
-                              fontFamily: 'SF Pro Display', color: pinkColor),
-                        ),
-                      )
+                    right: 0,
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                      decoration: BoxDecoration(
+                        color: blurredPinkColor,
+                        borderRadius: BorderRadius.circular(25),
+                      ),
+                      child: Text(
+                        '$discount% off',
+                        style: TextStyle(
+                          fontFamily: 'SF Pro Display', color: pinkColor),
+                      ),
+                    )
                   )
                       
               ]),
@@ -88,13 +87,14 @@ class GridItem extends StatelessWidget {
             Text(
               price,
               style: TextStyle(
-                  color: discount > 0 ? tertiaryColor : secondaryColor,
-                  fontSize: discount > 0 ? 14 : 16,
-                  fontWeight: FontWeight.w500,
-                  decoration: discount > 0
-                      ? TextDecoration.lineThrough
-                      : TextDecoration.none,
-                  decorationColor: tertiaryColor),
+                color: discount > 0 ? tertiaryColor : secondaryColor,
+                fontSize: discount > 0 ? 14 : 16,
+                fontWeight: FontWeight.w500,
+                decoration: discount > 0
+                  ? TextDecoration.lineThrough
+                  : TextDecoration.none,
+                decorationColor: tertiaryColor
+              ),
             ),
             
             const SizedBox(

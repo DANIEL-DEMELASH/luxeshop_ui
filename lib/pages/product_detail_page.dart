@@ -17,61 +17,65 @@ class ProductDetail extends StatefulWidget {
 class _ProductDetailState extends State<ProductDetail> {
   int activeIndex = 0;
   int activeCategoryIndex = 0;
+  
   Widget buildIndicator() => Stack(
-        children: [
-          SizedBox(
-            width: double.infinity,
-            height: 30,
-            child: Center(
-              child: AnimatedSmoothIndicator(
-                activeIndex: activeIndex,
-                count: ipadImages.length,
-                effect: WormEffect(
-                    dotHeight: 4,
-                    dotWidth: 36,
-                    activeDotColor: primaryColor,
-                    dotColor: tertiaryColor),
-              ),
+    children: [
+      SizedBox(
+        width: double.infinity,
+        height: 30,
+        child: Center(
+          child: AnimatedSmoothIndicator(
+            activeIndex: activeIndex,
+            count: ipadImages.length,
+            effect: WormEffect(
+              dotHeight: 4,
+              dotWidth: 36,
+              activeDotColor: primaryColor,
+              dotColor: tertiaryColor
             ),
           ),
-          Positioned(
-            right: 0,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              decoration: BoxDecoration(
-                color: blurredPinkColor,
-                borderRadius: BorderRadius.circular(25),
-              ),
-              child: Text(
-                '${activeIndex + 1}/${ipadImages.length}',
-                style: TextStyle(
-                  fontFamily: 'SF Pro Display',
-                  color: pinkColor,
-                ),
-              ),
+        ),
+      ),
+      
+      Positioned(
+        right: 0,
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          decoration: BoxDecoration(
+            color: blurredPinkColor,
+            borderRadius: BorderRadius.circular(25),
+          ),
+          child: Text(
+            '${activeIndex + 1}/${ipadImages.length}',
+            style: TextStyle(
+              fontFamily: 'SF Pro Display',
+              color: pinkColor,
             ),
           ),
-        ],
-      );
+        ),
+      ),
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
-        padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 20.0),
           child: GestureDetector(
             onTap: () => Navigator.pop(context),
             child: CircleAvatar(
               radius: 18,
               backgroundColor: tertiaryColor,
               child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
+                radius: 17,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_back,
+                  color: secondaryColor,
+                )
+              ),
             ),
           ),
         ),
@@ -84,90 +88,95 @@ class _ProductDetailState extends State<ProductDetail> {
             child: GestureDetector(
               onTap: () => Navigator.pop(context),
               child: CircleAvatar(
-              radius: 18,
-              backgroundColor: tertiaryColor,
-              child: CircleAvatar(
+                radius: 18,
+                backgroundColor: tertiaryColor,
+                child: CircleAvatar(
                   radius: 17,
                   backgroundColor: Colors.white,
                   child: Icon(
                     Icons.share_outlined,
                     color: secondaryColor,
-                  )),
-            ),
+                  )
+                ),
+              ),
             ),
           ),
         ],
       ),
       
-      bottomNavigationBar: SizedBox(
-        width: double.infinity,
-        height: 80,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MyCart()));
-              },
-              child: Container(
-                height: 55,
-                width: MediaQuery.of(context).size.width / 2 - 26,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-                decoration: BoxDecoration(
+      bottomNavigationBar: SafeArea(
+        child: SizedBox(
+          width: double.infinity,
+          height: 80,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const MyCart()));
+                },
+                child: Container(
+                  height: 55,
+                  width: MediaQuery.of(context).size.width / 2 - 26,
+                  padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+                  decoration: BoxDecoration(
                     border: Border.all(color: primaryColor),
-                    borderRadius: BorderRadius.circular(12)),
-                child: Row(
-                  children: [
-                    Image.asset(
-                      'assets/images/shopping-bag-primary.png',
-                      width: 20,
-                    ),
-                    
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    
-                    Text(
-                      'Add to Cart',
-                      style: TextStyle(
+                    borderRadius: BorderRadius.circular(12)
+                  ),
+                  child: Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/shopping-bag-primary.png',
+                        width: 20,
+                      ),
+                      
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      
+                      Text(
+                        'Add to Cart',
+                        style: TextStyle(
                           color: primaryColor,
                           fontSize: 16,
-                          fontWeight: FontWeight.w500),
-                    )
-                  ],
-                ),
-              ),
-            ),
-            
-            GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const CheckOutPage()));
-              },
-              child: Container(
-                width: MediaQuery.of(context).size.width / 2 - 26,
-                height: 55,
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-                decoration: BoxDecoration(
-                    color: primaryColor,
-                    borderRadius: BorderRadius.circular(12)),
-                child: const Center(
-                  child: Text(
-                    'Checkout',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500),
+                          fontWeight: FontWeight.w500
+                        ),
+                      )
+                    ],
                   ),
                 ),
               ),
-            )
-          ],
+              
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const CheckOutPage()));
+                },
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 2 - 26,
+                  height: 55,
+                  padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+                  decoration: BoxDecoration(
+                    color: primaryColor,
+                    borderRadius: BorderRadius.circular(12)
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'Checkout',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500
+                      ),
+                    ),
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
       
@@ -220,9 +229,10 @@ class _ProductDetailState extends State<ProductDetail> {
                   Text(
                     'Ipad Pro 6th Generation 11 Inch 2022',
                     style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: secondaryColor),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w400,
+                      color: secondaryColor
+                    ),
                   ),
                   
                   Icon(
@@ -248,8 +258,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   
                   Container(
-                    padding:
-                        const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                     decoration: BoxDecoration(
                       color: blurredPinkColor,
                       borderRadius: BorderRadius.circular(25),
@@ -269,11 +278,12 @@ class _ProductDetailState extends State<ProductDetail> {
               Text(
                 'IDR 16.999.000',
                 style: TextStyle(
-                    color: tertiaryColor,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    decoration: TextDecoration.lineThrough,
-                    decorationColor: tertiaryColor),
+                  color: tertiaryColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  decoration: TextDecoration.lineThrough,
+                  decorationColor: tertiaryColor
+                ),
               ),
               
               const SizedBox(
@@ -290,8 +300,8 @@ class _ProductDetailState extends State<ProductDetail> {
               ),
               
               const ExpandableText(
-                  text:
-                      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo quam nobis nam autem quis, praesentium eius cupiditate possimus fugit aspernatur voluptate provident sed. Blanditiis illum itaque dolorum dolorem quae autem voluptatum necessitatibus aliquam, corporis id praesentium ducimus nihil amet explicabo repellendus iusto maxime voluptatibus sapiente inventore soluta deleniti, a error impedit! Provident consectetur optio, numquam accusantium odit commodi esse ipsa animi obcaecati a libero molestiae at perferendis error incidunt sunt quam, ipsum quo! Qui aperiam itaque dolor expedita officiis nulla dolore. Harum et, ea, consectetur, ratione quam rerum obcaecati exercitationem eos autem ducimus quibusdam officia recusandae quae voluptate voluptatibus temporibus incidunt nostrum deserunt? Voluptatum, adipisci. Veniam enim nam libero cum sapiente maiores reprehenderit deleniti placeat obcaecati mollitia blanditiis exercitationem porro, quam dolorem alias quos, dolores dolorum est, hic delectus voluptates eligendi saepe distinctio. Sint illo totam deleniti tempora, minus quos necessitatibus esse delectus, laudantium voluptate eius vel explicabo adipisci eos porro optio ut velit corporis praesentium accusantium harum atque omnis.'),
+                text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo quam nobis nam autem quis, praesentium eius cupiditate possimus fugit aspernatur voluptate provident sed. Blanditiis illum itaque dolorum dolorem quae autem voluptatum necessitatibus aliquam, corporis id praesentium ducimus nihil amet explicabo repellendus iusto maxime voluptatibus sapiente inventore soluta deleniti, a error impedit! Provident consectetur optio, numquam accusantium odit commodi esse ipsa animi obcaecati a libero molestiae at perferendis error incidunt sunt quam, ipsum quo! Qui aperiam itaque dolor expedita officiis nulla dolore. Harum et, ea, consectetur, ratione quam rerum obcaecati exercitationem eos autem ducimus quibusdam officia recusandae quae voluptate voluptatibus temporibus incidunt nostrum deserunt? Voluptatum, adipisci. Veniam enim nam libero cum sapiente maiores reprehenderit deleniti placeat obcaecati mollitia blanditiis exercitationem porro, quam dolorem alias quos, dolores dolorum est, hic delectus voluptates eligendi saepe distinctio. Sint illo totam deleniti tempora, minus quos necessitatibus esse delectus, laudantium voluptate eius vel explicabo adipisci eos porro optio ut velit corporis praesentium accusantium harum atque omnis.'
+              ),
               
               const SizedBox(
                 height: 12,
@@ -388,12 +398,12 @@ class _ProductDetailState extends State<ProductDetail> {
                       Row(
                         children: [
                           Container(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                             decoration: BoxDecoration(
-                                color: blurredPinkColor,
-                                borderRadius: BorderRadius.circular(25),
-                                border: Border.all(color: pinkColor)),
+                              color: blurredPinkColor,
+                              borderRadius: BorderRadius.circular(25),
+                              border: Border.all(color: pinkColor)
+                            ),
                             child: Text(
                               'Wi-fi',
                               style: TextStyle(color: pinkColor),
@@ -402,12 +412,12 @@ class _ProductDetailState extends State<ProductDetail> {
                           
                           Container(
                             margin: const EdgeInsets.only(left: 8),
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 12, vertical: 4),
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                             decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(25),
-                                border: Border.all(color: tertiaryColor)),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(25),
+                              border: Border.all(color: tertiaryColor)
+                            ),
                             child: Text(
                               'Wi-fi + Cellular',
                               style: TextStyle(color: secondaryColor),

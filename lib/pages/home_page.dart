@@ -34,26 +34,29 @@ class HomePage extends StatelessWidget {
         
         actions: [
           IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const MyCart()));
-              },
-              icon: MyIcon(
-                icon: Image.asset(
-                  'assets/images/shopping-bag.png',
-                  width: 25,
-                ),
-              )),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const MyCart()));
+            },
+            icon: MyIcon(
+              icon: Image.asset(
+                'assets/images/shopping-bag.png',
+                width: 25,
+              ),
+            )
+          ),
           
           Padding(
             padding: const EdgeInsets.only(right: 10.0),
             child: IconButton(
-                onPressed: () {},
-                icon: MyIcon(
-                    icon: Image.asset(
-                  'assets/images/notification-bell.png',
-                  width: 25,
-                ))),
+              onPressed: () {},
+              icon: MyIcon(
+                icon: Image.asset(
+                'assets/images/notification-bell.png',
+                width: 25,
+                )
+              )
+            ),
           ),
         ],
       ),
@@ -94,9 +97,9 @@ class HomePage extends StatelessWidget {
                           text: 'Deliver to ',
                           children: [
                             TextSpan(
-                                text:
-                                    'Jl. Rose No. 123 Block A, Cipete Sub-District, Cipete Sub-District',
-                                style: secondaryTextStyle),
+                              text: 'Jl. Rose No. 123 Block A, Cipete Sub-District, Cipete Sub-District',
+                              style: secondaryTextStyle
+                            ),
                           ],
                         ),
                       ),
@@ -111,20 +114,21 @@ class HomePage extends StatelessWidget {
                 height: 230,
                 child: GridView.builder(
                   physics: const NeverScrollableScrollPhysics(),
-                    itemCount: categories.length,
-                    gridDelegate:
-                        const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 4,
-                            mainAxisSpacing: 20,
-                            crossAxisSpacing: 10,
-                            childAspectRatio: 0.8),
-                    itemBuilder: (BuildContext context, int index) {
-                      var category = categories[index];
-                      return CategoryWidget(
-                        text: category['title'],
-                        imageUrl: category['imageUrl'],
-                      );
-                    }),
+                  itemCount: categories.length,
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 4,
+                    mainAxisSpacing: 20,
+                    crossAxisSpacing: 10,
+                    childAspectRatio: 0.8
+                  ),
+                  itemBuilder: (BuildContext context, int index) {
+                    var category = categories[index];
+                    return CategoryWidget(
+                      text: category['title'],
+                      imageUrl: category['imageUrl'],
+                    );
+                  }
+                ),
               ),
               
               const SizedBox(height: 20),
@@ -137,9 +141,7 @@ class HomePage extends StatelessWidget {
                   child: CustomPaint(
                     painter: SquarePainter(),
                     child: Padding(
-                      padding: const EdgeInsets.only(
-                        left: 20,
-                      ),
+                      padding: const EdgeInsets.only(left: 20),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -151,8 +153,7 @@ class HomePage extends StatelessWidget {
                               
                               Text(
                                 '6.6 Flash Sale',
-                                style:
-                                    bigTextStyle.copyWith(color: Colors.white),
+                                style: bigTextStyle.copyWith(color: Colors.white),
                               ),
                               
                               const Text(
@@ -165,8 +166,7 @@ class HomePage extends StatelessWidget {
                               ),
                               
                               Container(
-                                padding: const EdgeInsets.symmetric(
-                                    horizontal: 16, vertical: 4),
+                                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
                                 decoration: BoxDecoration(
                                   color: primaryColor,
                                   borderRadius: BorderRadius.circular(4),
@@ -174,8 +174,8 @@ class HomePage extends StatelessWidget {
                                 child: const Text(
                                   'Shop Now',
                                   style: TextStyle(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.w500),
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.w500),
                                 ),
                               ),
                             ],
@@ -197,7 +197,8 @@ class HomePage extends StatelessWidget {
                   Row(
                     children: [
                       Text('Flash Sale',
-                          style: bigTextStyle.copyWith(color: secondaryColor)),
+                        style: bigTextStyle.copyWith(color: secondaryColor)
+                      ),
                       
                       const SizedBox(width: 8),
                       
@@ -212,8 +213,7 @@ class HomePage extends StatelessWidget {
                       const SizedBox(width: 4),
                       
                       Container(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 12, vertical: 4),
+                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                         decoration: BoxDecoration(
                           color: pinkColor,
                           borderRadius: BorderRadius.circular(25),

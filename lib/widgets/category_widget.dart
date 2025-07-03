@@ -19,16 +19,16 @@ class CategoryWidget extends StatelessWidget {
       children: [
         
         CircleAvatar(
-            backgroundColor: tertiaryColor,
-            radius: 35,
-            child: CircleAvatar(
-              backgroundColor: Colors.white,
-              radius: 34,
-              child: Padding(
-                padding: const EdgeInsets.all(20.0),
-                child: Image.asset(imageUrl),
-              ),
-            )
+          backgroundColor: tertiaryColor,
+          radius: 35,
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            radius: 34,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Image.asset(imageUrl),
+            ),
+          )
         ),
             
         const SizedBox(
@@ -38,9 +38,10 @@ class CategoryWidget extends StatelessWidget {
         Text(
           text,
           style: TextStyle(
-              fontFamily: 'SF Pro Display',
-              color: secondaryColor,
-              fontWeight: FontWeight.w500),
+            fontFamily: 'SF Pro Display',
+            color: secondaryColor,
+            fontWeight: FontWeight.w500
+          ),
         )
       ],
     );

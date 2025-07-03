@@ -6,6 +6,7 @@ class MyTab extends StatelessWidget {
     required this.title,
     required this.iconUrl,
   });
+  
   final String title;
   final String iconUrl;
 

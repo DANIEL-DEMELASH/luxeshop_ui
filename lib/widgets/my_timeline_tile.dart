@@ -8,6 +8,7 @@ class MyTimelineTile extends StatelessWidget {
   final bool isLast;
   final bool isPast;
   final Widget timelineCard;
+  
   const MyTimelineTile(
       {super.key,
       required this.isFirst,
@@ -22,15 +23,15 @@ class MyTimelineTile extends StatelessWidget {
       child: TimelineTile(
         isFirst: isFirst,
         isLast: isLast,
-        beforeLineStyle: LineStyle(
-            color: isPast ? primaryColor : containerBorderColor, thickness: 3),
+        beforeLineStyle: LineStyle(color: isPast ? primaryColor : containerBorderColor, thickness: 3),
         indicatorStyle: IndicatorStyle(
-            width: 25,
-            color: containerBorderColor,
-            iconStyle: IconStyle(
-              iconData: Icons.circle,
-              color: isPast ? primaryColor : Colors.white,
-            )),
+          width: 25,
+          color: containerBorderColor,
+          iconStyle: IconStyle(
+            iconData: Icons.circle,
+            color: isPast ? primaryColor : Colors.white,
+          )
+        ),
         endChild: timelineCard,
       ),
     );

@@ -12,12 +12,14 @@ class MyIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        decoration: BoxDecoration(
-            border: Border.all(color: tertiaryColor),
-            borderRadius: BorderRadius.circular(4)),
-        child: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Badge(child: icon),
-        ));
+      decoration: BoxDecoration(
+        border: Border.all(color: tertiaryColor),
+        borderRadius: BorderRadius.circular(4)
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Badge(child: icon),
+      )
+    );
   }
 }

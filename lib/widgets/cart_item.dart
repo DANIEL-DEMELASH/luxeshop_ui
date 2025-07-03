@@ -38,8 +38,9 @@ class _CartItemState extends State<CartItem> {
       margin: const EdgeInsets.only(bottom: 12),
       decoration: BoxDecoration(
         color: defaultBgColor,
-          border: Border.all(color: containerBorderColor, width: 2),
-          borderRadius: BorderRadius.circular(12)),
+        border: Border.all(color: containerBorderColor, width: 2),
+        borderRadius: BorderRadius.circular(12)
+      ),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -49,8 +50,7 @@ class _CartItemState extends State<CartItem> {
               Stack(children: [
                 
                 Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 24.0, vertical: 14.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 14.0),
                   child: Image.asset(
                     widget.imageUrl,
                     width: 50,
@@ -63,16 +63,15 @@ class _CartItemState extends State<CartItem> {
                   child: Checkbox(
                     value: widget.isChecked,
                     fillColor: widget.isChecked
-                        ? WidgetStateProperty.all(primaryColor)
-                        : WidgetStateProperty.all(Colors.white),
+                      ? WidgetStateProperty.all(primaryColor)
+                      : WidgetStateProperty.all(Colors.white),
                     checkColor: Colors.white,
                     onChanged: (value) {
                       setState(() {
                         widget.isChecked = !widget.isChecked;
                       });
                     },
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(4)),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
                     side: BorderSide(color: checkboxBorderColor, width: 2),
                   ),
                 ),
@@ -99,24 +98,27 @@ class _CartItemState extends State<CartItem> {
                     Container(
                       height: 30,
                       decoration: BoxDecoration(
-                          border: Border.all(color: tertiaryColor),
-                          borderRadius: BorderRadius.circular(4)),
+                        border: Border.all(color: tertiaryColor),
+                        borderRadius: BorderRadius.circular(4)),
                       child: DropdownButton(
-                          value: widget._selectedValue,
-                          icon: const Icon(Icons.arrow_drop_down),
-                          elevation: 0,
-                          style: TextStyle(
-                            color: secondaryColor,
-                          ),
-                          padding: const EdgeInsets.only(left: 4),
-                          underline: Container(),
-                          alignment: Alignment.center,
-                          items: widget.list
-                              .map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                                value: value, child: Text(value));
-                          }).toList(),
-                          onChanged: (value) {}),
+                        value: widget._selectedValue,
+                        icon: const Icon(Icons.arrow_drop_down),
+                        elevation: 0,
+                        style: TextStyle(
+                          color: secondaryColor,
+                        ),
+                        padding: const EdgeInsets.only(left: 4),
+                        underline: Container(),
+                        alignment: Alignment.center,
+                        items: widget.list
+                            .map<DropdownMenuItem<String>>((String value) {
+                          return DropdownMenuItem<String>(
+                              value: value, child: Text(value));
+                        }).toList(),
+                        onChanged: (value) {
+                          
+                        }
+                      ),
                     ),
                     
                     const SizedBox(
@@ -131,15 +133,15 @@ class _CartItemState extends State<CartItem> {
                     Row(
                       children: [
                         Text(widget.discountPrice,
-                            style: secondaryTextStyle.copyWith(fontSize: 18)),
+                          style: secondaryTextStyle.copyWith(fontSize: 18)
+                        ),
                             
                         const SizedBox(
                           width: 8,
                         ),
                         
                         Container(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 12, vertical: 4),
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
                           decoration: BoxDecoration(
                             color: blurredPinkColor,
                             borderRadius: BorderRadius.circular(25),
@@ -161,16 +163,18 @@ class _CartItemState extends State<CartItem> {
               Column(
                 children: [
                   Text(widget.price,
-                      style: TextStyle(
-                          color: widget.discount > 0
-                              ? tertiaryColor
-                              : secondaryColor,
-                          fontSize: widget.discount > 0 ? 14 : 18,
-                          fontWeight: FontWeight.w500,
-                          decoration: widget.discount > 0
-                              ? TextDecoration.lineThrough
-                              : TextDecoration.none,
-                          decorationColor: tertiaryColor)),
+                    style: TextStyle(
+                      color: widget.discount > 0
+                        ? tertiaryColor
+                        : secondaryColor,
+                      fontSize: widget.discount > 0 ? 14 : 18,
+                      fontWeight: FontWeight.w500,
+                      decoration: widget.discount > 0
+                        ? TextDecoration.lineThrough
+                        : TextDecoration.none,
+                      decorationColor: tertiaryColor
+                    )
+                  ),
                           
                   const SizedBox(
                     height: 8,
@@ -203,8 +207,9 @@ class _CartItemState extends State<CartItem> {
                         Text(
                           '1',
                           style: TextStyle(
-                              color: secondaryColor,
-                              fontSize: 18),
+                            color: secondaryColor,
+                            fontSize: 18
+                          ),
                         ),
                         
                         const SizedBox(

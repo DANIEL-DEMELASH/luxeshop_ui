@@ -20,12 +20,13 @@ class SearchPage extends StatelessWidget {
               radius: 18,
               backgroundColor: tertiaryColor,
               child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
+                radius: 17,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_back,
+                  color: secondaryColor,
+                )
+              ),
             ),
           ),
         ),
@@ -61,11 +62,11 @@ class SearchPage extends StatelessWidget {
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
-                    padding: const EdgeInsets.only(
-                        left: 10, top: 12, bottom: 12, right: 30),
+                    padding: const EdgeInsets.only(left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
-                        border: Border.all(color: containerBorderColor),
-                        borderRadius: BorderRadius.circular(8)),
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
@@ -89,11 +90,11 @@ class SearchPage extends StatelessWidget {
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
-                    padding: const EdgeInsets.only(
-                        left: 10, top: 12, bottom: 12, right: 30),
+                    padding: const EdgeInsets.only(left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
-                        border: Border.all(color: containerBorderColor),
-                        borderRadius: BorderRadius.circular(8)),
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
@@ -126,11 +127,11 @@ class SearchPage extends StatelessWidget {
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
-                    padding: const EdgeInsets.only(
-                        left: 10, top: 12, bottom: 12, right: 30),
+                    padding: const EdgeInsets.only(left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
-                        border: Border.all(color: containerBorderColor),
-                        borderRadius: BorderRadius.circular(8)),
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)
+                    ),
                     child: Row(
                       children: [
                         Image.asset(
@@ -154,11 +155,11 @@ class SearchPage extends StatelessWidget {
                   Container(
                     height: 70,
                     width: MediaQuery.of(context).size.width / 2.3,
-                    padding: const EdgeInsets.only(
-                        left: 10, top: 12, bottom: 12, right: 30),
+                    padding: const EdgeInsets.only(left: 10, top: 12, bottom: 12, right: 30),
                     decoration: BoxDecoration(
-                        border: Border.all(color: containerBorderColor),
-                        borderRadius: BorderRadius.circular(8)),
+                      border: Border.all(color: containerBorderColor),
+                      borderRadius: BorderRadius.circular(8)
+                    ),
                     child: Row(
                       children: [
                         Image.asset(

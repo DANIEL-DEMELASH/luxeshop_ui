@@ -19,12 +19,13 @@ class TrackingPage extends StatelessWidget {
               radius: 18,
               backgroundColor: tertiaryColor,
               child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
+                radius: 17,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_back,
+                  color: secondaryColor,
+                )
+              ),
             ),
           ),
         ),
@@ -32,25 +33,26 @@ class TrackingPage extends StatelessWidget {
         title: const Text('Tracking Details')
       ),
       
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 80,
-        decoration: const BoxDecoration(
-          color: Colors.white,
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+      bottomNavigationBar: SafeArea(
         child: Container(
-          height: 50,
-          padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
-          decoration: BoxDecoration(
-              color: primaryColor, borderRadius: BorderRadius.circular(12)),
-          child: const Center(
-            child: Text(
-              'Live Tracking',
-              style: TextStyle(
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Container(
+            height: 50,
+            padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+            decoration: BoxDecoration(color: primaryColor, borderRadius: BorderRadius.circular(12)),
+            child: const Center(
+              child: Text(
+                'Live Tracking',
+                style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
-                  fontWeight: FontWeight.w500),
+                  fontWeight: FontWeight.w500
+                ),
+              ),
             ),
           ),
         ),

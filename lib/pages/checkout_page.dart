@@ -19,12 +19,13 @@ class CheckOutPage extends StatelessWidget {
               radius: 18,
               backgroundColor: tertiaryColor,
               child: CircleAvatar(
-                  radius: 17,
-                  backgroundColor: Colors.white,
-                  child: Icon(
-                    Icons.arrow_back,
-                    color: secondaryColor,
-                  )),
+                radius: 17,
+                backgroundColor: Colors.white,
+                child: Icon(
+                  Icons.arrow_back,
+                  color: secondaryColor,
+                )
+              ),
             ),
           ),
         ),
@@ -34,87 +35,89 @@ class CheckOutPage extends StatelessWidget {
         ),
       ),
       
-      bottomNavigationBar: Container(
-        width: double.infinity,
-        height: 80,
-        
-        decoration: BoxDecoration(color: Colors.white, boxShadow: [
-          BoxShadow(
+      bottomNavigationBar: SafeArea(
+        child: Container(
+          width: double.infinity,
+          height: 80,
+          
+          decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            BoxShadow(
               color: checkboxBorderColor,
               offset: const Offset(0, 0),
               blurRadius: 10,
-              spreadRadius: 15)
-        ]),
-        
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Total',
-                  style: tertiaryTextStyle,
-                ),
-                
-                const SizedBox(
-                  height: 4,
-                ),
-                
-                Row(
-                  children: [
-                    Text(
-                      'IDR 15.349.000',
-                      style: secondaryTextStyle.copyWith(fontSize: 18),
-                    ),
-                    
-                    const SizedBox(
-                      width: 4,
-                    ),
-                    
-                    const Icon(
-                      CupertinoIcons.chevron_down,
-                      size: 18,
-                    )
-                  ],
-                ),
-              ],
-            ),
-            
-            Column(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const TrackingPage()));
-                  },
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 3,
-                    height: 50,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 26, vertical: 14),
-                    decoration: BoxDecoration(
-                        color: primaryColor,
-                        borderRadius: BorderRadius.circular(12)),
-                    child: const Center(
-                      child: Text(
-                        'Checkout',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500),
-                      ),
-                    ),
+            )
+          ]),
+          
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Total',
+                    style: tertiaryTextStyle,
                   ),
                   
-                )
-              ],
-            )
-          ],
+                  const SizedBox(
+                    height: 4,
+                  ),
+                  
+                  Row(
+                    children: [
+                      Text(
+                        'IDR 15.349.000',
+                        style: secondaryTextStyle.copyWith(fontSize: 18),
+                      ),
+                      
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      
+                      const Icon(
+                        CupertinoIcons.chevron_down,
+                        size: 18,
+                      )
+                    ],
+                  ),
+                ],
+              ),
+              
+              Column(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const TrackingPage()));
+                    },
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 3,
+                      height: 50,
+                      padding: const EdgeInsets.symmetric(horizontal: 26, vertical: 14),
+                      decoration: BoxDecoration(
+                          color: primaryColor,
+                          borderRadius: BorderRadius.circular(12)),
+                      child: const Center(
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500
+                          ),
+                        ),
+                      ),
+                    ),
+                    
+                  )
+                ],
+              )
+            ],
+          ),
         ),
       ),
       
@@ -128,8 +131,9 @@ class CheckOutPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    border: Border.all(color: containerBorderColor, width: 2),
-                    borderRadius: BorderRadius.circular(12)),
+                  border: Border.all(color: containerBorderColor, width: 2),
+                  borderRadius: BorderRadius.circular(12)
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -149,8 +153,9 @@ class CheckOutPage extends StatelessWidget {
                             const Text(
                               'Shipping Address',
                               style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w500),
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500
+                              ),
                             ),
                             
                             const SizedBox(
@@ -162,26 +167,26 @@ class CheckOutPage extends StatelessWidget {
                               child: RichText(
                                 text: TextSpan(children: [
                                   WidgetSpan(
-                                      child: Container(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 6, vertical: 2),
-                                    decoration: BoxDecoration(
+                                    child: Container(
+                                      padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                                      decoration: BoxDecoration(
                                         color: blurredPinkColor,
-                                        borderRadius:
-                                            BorderRadius.circular(12)),
-                                    child: Text(
-                                      'Home',
-                                      textAlign: TextAlign.center,
-                                      style: TextStyle(
+                                        borderRadius: BorderRadius.circular(12)
+                                      ),
+                                      child: Text(
+                                        'Home',
+                                        textAlign: TextAlign.center,
+                                        style: TextStyle(
                                           color: primaryColor,
                                           fontSize: 13,
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  )),
+                                          fontWeight: FontWeight.w500
+                                        ),
+                                      ),
+                                    )
+                                  ),
                                   
                                   TextSpan(
-                                    text:
-                                        ' Jl. Rose No. 123 Block A, Cipete Sub District, Cipete Sub-District, Cilandak District, South Jakarta City, DKI Jakarta 12410 Indonesia',
+                                    text: ' Jl. Rose No. 123 Block A, Cipete Sub District, Cipete Sub-District, Cilandak District, South Jakarta City, DKI Jakarta 12410 Indonesia',
                                     style: secondaryTextStyle.copyWith(fontSize: 12, backgroundColor: Colors.white, height: 1.5),
                                   )
                                 ]),
@@ -216,8 +221,9 @@ class CheckOutPage extends StatelessWidget {
                                 Text(
                                   '+62 874 3190 1715',
                                   style: TextStyle(
-                                      color: containerBorderColor,
-                                      fontWeight: FontWeight.w500),
+                                    color: containerBorderColor,
+                                    fontWeight: FontWeight.w500
+                                  ),
                                 )
                               ],
                             )
@@ -329,8 +335,9 @@ class CheckOutPage extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(15),
                 decoration: BoxDecoration(
-                    border: Border.all(color: containerBorderColor),
-                    borderRadius: BorderRadius.circular(12)),
+                  border: Border.all(color: containerBorderColor),
+                  borderRadius: BorderRadius.circular(12)
+                ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -396,9 +403,10 @@ class CheckOutPage extends StatelessWidget {
                   Text(
                     'IDR 15.349.000',
                     style: TextStyle(
-                        color: primaryColor,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 16),
+                      color: primaryColor,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 16
+                    ),
                   ),
                 ],
               ),
@@ -432,8 +440,8 @@ class CheckOutPage extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                          border: Border.all(color: primaryColor),
-                          borderRadius: BorderRadius.circular(12)),
+                        border: Border.all(color: primaryColor),
+                        borderRadius: BorderRadius.circular(12)),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -451,9 +459,9 @@ class CheckOutPage extends StatelessWidget {
                               Text(
                                 'Cash',
                                 style: TextStyle(
-                                    color: primaryColor,
-                                    fontSize: 16, 
-                                    fontWeight: FontWeight.w500),
+                                  color: primaryColor,
+                                  fontSize: 16, 
+                                  fontWeight: FontWeight.w500),
                               )
                             ],
                           ),
@@ -467,8 +475,8 @@ class CheckOutPage extends StatelessWidget {
                             child: Text(
                               'Pay cash when the medicine arrives at the destination.',
                               style: TextStyle(
-                                  color: primaryColor,
-                                  fontSize: 12,),
+                                color: primaryColor,
+                                fontSize: 12,),
                             ),
                           )
                         ],
@@ -482,8 +490,9 @@ class CheckOutPage extends StatelessWidget {
                     Container(
                       padding: const EdgeInsets.all(15),
                       decoration: BoxDecoration(
-                          border: Border.all(color: containerBorderColor),
-                          borderRadius: BorderRadius.circular(12)),
+                        border: Border.all(color: containerBorderColor),
+                        borderRadius: BorderRadius.circular(12)
+                      ),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -514,8 +523,9 @@ class CheckOutPage extends StatelessWidget {
                             child: Text(
                               'Log in to your online account and make payments.',
                               style: TextStyle(
-                                  color: secondaryColor,
-                                  fontSize: 12,),
+                                color: secondaryColor,
+                                fontSize: 12
+                              ),
                             ),
                           )
                         ],

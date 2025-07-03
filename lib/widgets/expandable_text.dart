@@ -31,9 +31,10 @@ class _ExpandableTextState extends State<ExpandableText> {
     final span = TextSpan(
       text: widget.text,
       style: TextStyle(
-          color: tertiaryColor,
-          fontFamily: 'SF Pro Display',
-          fontWeight: FontWeight.w500),
+        color: tertiaryColor,
+        fontFamily: 'SF Pro Display',
+        fontWeight: FontWeight.w500
+      ),
     );
 
     final tp = TextPainter(
@@ -64,9 +65,10 @@ class _ExpandableTextState extends State<ExpandableText> {
             : Text(
                 widget.text,
                 style: TextStyle(
-                    color: tertiaryColor,
-                    fontFamily: 'SF Pro Display',
-                    fontWeight: FontWeight.w500),
+                  color: tertiaryColor,
+                  fontFamily: 'SF Pro Display',
+                  fontWeight: FontWeight.w500
+                ),
               ),
               
         if (exceededMaxLines)
@@ -75,9 +77,10 @@ class _ExpandableTextState extends State<ExpandableText> {
             child: Text(
               _readMore ? 'Read more' : 'Read less',
               style: TextStyle(
-                  color: primaryColor,
-                  fontWeight: FontWeight.w500,
-                  fontFamily: 'SF Pro Display'),
+                color: primaryColor,
+                fontWeight: FontWeight.w500,
+                fontFamily: 'SF Pro Display'
+              ),
             ),
           ),
           

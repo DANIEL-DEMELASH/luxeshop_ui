@@ -17,47 +17,51 @@ class _BottomNavigationPage extends State<BottomNavigationPage> {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
-          bottomNavigationBar: TabBar(
-              indicatorPadding: const EdgeInsets.only(bottom: 70),
-              indicatorColor: primaryColor,
-              
-              unselectedLabelStyle: tertiaryTextStyle.copyWith(fontWeight: FontWeight.w500),
-              
-              labelStyle: TextStyle(
-                color: primaryColor,
+        bottomNavigationBar: SafeArea(
+          child: TabBar(
+            indicatorPadding: const EdgeInsets.only(bottom: 70),
+            indicatorColor: primaryColor,
+            dividerColor: Colors.transparent,
+            unselectedLabelStyle: tertiaryTextStyle.copyWith(fontWeight: FontWeight.w500),
+            
+            labelStyle: TextStyle(
+              color: primaryColor,
+            ),
+            
+            tabs: const [
+              MyTab(
+                title: 'Home',
+                iconUrl: 'assets/images/home.png',
               ),
               
-              tabs: const [
-                MyTab(
-                  title: 'Home',
-                  iconUrl: 'assets/images/home.png',
-                ),
-                
-                MyTab(
-                  title: 'Wishlist',
-                  iconUrl: 'assets/images/heart.png',
-                ),
-                
-                MyTab(
-                  title: 'Transaction',
-                  iconUrl: 'assets/images/notes.png',
-                ),
-                
-                MyTab(
-                  title: 'Profile',
-                  iconUrl: 'assets/images/profile.png',
-                ),
-                
-              ]),
+              MyTab(
+                title: 'Wishlist',
+                iconUrl: 'assets/images/heart.png',
+              ),
               
-          body: TabBarView(
-            children: [
-              const HomePage(),
-              Container(),
-              Container(),
-              Container(),
-            ],
-          )),
+              MyTab(
+                title: 'Transaction',
+                iconUrl: 'assets/images/notes.png',
+              ),
+              
+              MyTab(
+                title: 'Profile',
+                iconUrl: 'assets/images/profile.png',
+              ),
+              
+            ]
+          ),
+        ),
+            
+        body: TabBarView(
+          children: [
+            const HomePage(),
+            Container(),
+            Container(),
+            Container(),
+          ],
+        )
+      ),
     );
   }
 }

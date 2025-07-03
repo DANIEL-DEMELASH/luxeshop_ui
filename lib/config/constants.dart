@@ -12,8 +12,10 @@ Color containerBorderColor = const Color(0xFFE7E9F0);
 Color defaultBgColor = Colors.white;
 
 
-TextStyle secondaryTextStyle =
-    TextStyle(color: secondaryColor, fontWeight: FontWeight.w500);
+TextStyle secondaryTextStyle = TextStyle(
+  color: secondaryColor, 
+  fontWeight: FontWeight.w500
+);
 
 TextStyle tertiaryTextStyle = TextStyle(
   color: tertiaryColor,
